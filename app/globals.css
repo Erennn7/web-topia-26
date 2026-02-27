@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f0faf4;
+  --foreground: #1a2e1a;
+  --primary: #15803d;
+  --primary-light: #22c55e;
+  --primary-dark: #166534;
+  --secondary: #059669;
+  --accent: #10b981;
+  --muted: #6b7f6b;
+  --card-bg: #ffffff;
+  --card-border: #d1e7d1;
+  --section-bg: #e8f5ec;
+  --emergency-red: #dc2626;
+  --emergency-bg: #fef2f2;
+  --success: #16a34a;
+  --info: #0891b2;
+  --warm: #ecfdf5;
+  --warm-dark: #d1fae5;
+  --lavender: #e0f2e0;
+  --peach: #dcfce7;
+  --mint: #d1fae5;
+  --sky: #e0f7e0;
+}
+
+.dark {
+  --background: #0a1f0a;
+  --foreground: #e2f0e2;
+  --primary: #22c55e;
+  --primary-light: #4ade80;
+  --primary-dark: #16a34a;
+  --secondary: #34d399;
+  --accent: #6ee7b7;
+  --muted: #86a086;
+  --card-bg: #132613;
+  --card-border: #1e3a1e;
+  --section-bg: #0f2b0f;
+  --emergency-red: #ef4444;
+  --emergency-bg: #3a1010;
+  --success: #22c55e;
+  --info: #22d3ee;
+  --warm: #0f2b0f;
+  --warm-dark: #132613;
+  --lavender: #1a331a;
+  --peach: #1a331a;
+  --mint: #132b18;
+  --sky: #132b18;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-section-bg: var(--section-bg);
+  --color-emergency-red: var(--emergency-red);
+  --color-emergency-bg: var(--emergency-bg);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-warm: var(--warm);
+  --color-warm-dark: var(--warm-dark);
+  --color-lavender: var(--lavender);
+  --color-peach: var(--peach);
+  --color-mint: var(--mint);
+  --color-sky: var(--sky);
+  --font-poppins: var(--font-poppins);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Font size scaling */
+html.text-lg body { font-size: 18px; }
+html.text-xl body { font-size: 20px; }
+html.text-2xl body { font-size: 22px; }
+
+/* Reading Modes */
+html.reading-comfortable body { letter-spacing: 0.02em; line-height: 1.9; }
+html.reading-comfortable p,
+html.reading-comfortable span { max-width: 65ch; }
+html.reading-focus body { letter-spacing: 0.01em; }
+html.reading-focus main { max-width: 800px; margin: 0 auto; }
+html.reading-focus .hide-in-focus { display: none; }
+
+html { scroll-behavior: smooth; }
+
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+.skip-link:focus { top: 0; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--section-bg); }
+::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* Floating animation for background elements */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -15px) rotate(2deg); }
+  50% { transform: translate(-5px, -25px) rotate(-1deg); }
+  75% { transform: translate(-15px, -10px) rotate(1deg); }
+}
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(15px, -20px) scale(1.02); }
+  66% { transform: translate(-10px, -15px) scale(0.98); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -12px); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.08); }
+}
+
+.animate-float-slow { animation: float-slow 12s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 8s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 6s ease-in-out infinite; }

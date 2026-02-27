@@ -1,0 +1,534 @@
+[
+  {
+    "id": "healthcare-checkups",
+    "title": "Senior Health Checkups",
+    "category": "Healthcare",
+    "type": "Medical",
+    "icon": "Heart",
+    "description": "Comprehensive health checkups designed specifically for seniors aged 60 and above. Regular screenings for blood pressure, diabetes, cholesterol, vision, and hearing.",
+    "eligibility": [
+      "Adults aged 60 years and above",
+      "Valid government-issued ID required",
+      "Available to all income levels",
+      "No prior enrollment needed for basic checkups"
+    ],
+    "benefits": [
+      "Free annual wellness checkup",
+      "Discounted specialist referrals",
+      "Priority appointment scheduling",
+      "Home visit option for mobility-limited seniors",
+      "Digital health records access"
+    ],
+    "steps": [
+      "Call the helpline or visit the nearest community health center",
+      "Bring your ID and any existing medical records",
+      "Complete a brief health questionnaire",
+      "Get your checkup scheduled within 48 hours",
+      "Receive your results and follow-up plan"
+    ],
+    "contact": {
+      "phone": "1-800-555-CARE",
+      "email": "health@webtopia.org",
+      "address": "123 Wellness Blvd, Suite 100",
+      "hours": "Mon–Fri, 8:00 AM – 6:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "Is there a cost for the health checkup?",
+        "answer": "Basic annual checkups are free for all seniors aged 60+. Specialist referrals may have a reduced copay depending on your insurance."
+      },
+      {
+        "question": "Can I get a home visit instead?",
+        "answer": "Yes! Seniors with limited mobility can request a home visit. Call our helpline to schedule one."
+      },
+      {
+        "question": "What should I bring to my appointment?",
+        "answer": "Please bring a valid ID, insurance card (if applicable), list of current medications, and any recent medical records."
+      }
+    ]
+  },
+  {
+    "id": "mental-health-support",
+    "title": "Mental Health & Counseling",
+    "category": "Healthcare",
+    "type": "Mental Health",
+    "icon": "Brain",
+    "description": "Confidential counseling and mental health support services for seniors dealing with depression, anxiety, grief, isolation, or life transitions.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Caregivers of senior citizens",
+      "No referral needed for initial consultation",
+      "Available regardless of insurance status"
+    ],
+    "benefits": [
+      "Free initial counseling session",
+      "Group therapy options",
+      "Telephone and video consultations available",
+      "Support groups for specific conditions",
+      "Caregiver support programs"
+    ],
+    "steps": [
+      "Contact our mental health helpline",
+      "Speak with a trained intake coordinator",
+      "Schedule your first session (in-person, phone, or video)",
+      "Meet with a licensed counselor",
+      "Develop a personalized support plan"
+    ],
+    "contact": {
+      "phone": "1-800-555-MIND",
+      "email": "mentalhealth@webtopia.org",
+      "address": "456 Serenity Lane, Suite 200",
+      "hours": "Mon–Sat, 9:00 AM – 8:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "Is my information kept confidential?",
+        "answer": "Absolutely. All sessions are confidential and comply with healthcare privacy regulations."
+      },
+      {
+        "question": "Can I attend group sessions?",
+        "answer": "Yes, we offer various group therapy sessions including grief support, anxiety management, and social connection groups."
+      }
+    ]
+  },
+  {
+    "id": "home-delivered-meals",
+    "title": "Home-Delivered Meals",
+    "category": "Meals",
+    "type": "Nutrition",
+    "icon": "UtensilsCrossed",
+    "description": "Nutritious, freshly prepared meals delivered directly to your doorstep. Special dietary accommodations available for diabetic, low-sodium, and heart-healthy needs.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Homebound or have difficulty preparing meals",
+      "No income requirements for basic service",
+      "Doctor's note required for medical diet plans"
+    ],
+    "benefits": [
+      "Daily meal delivery (lunch and dinner)",
+      "Customized dietary plans",
+      "Wellness check during delivery",
+      "Weekend meal packs available",
+      "No cost for eligible seniors"
+    ],
+    "steps": [
+      "Call the Meals Helpline or apply online",
+      "Complete a brief needs assessment",
+      "Choose your meal preferences and dietary needs",
+      "Delivery begins within one week of approval",
+      "Adjust your plan anytime by calling us"
+    ],
+    "contact": {
+      "phone": "1-800-555-MEAL",
+      "email": "meals@webtopia.org",
+      "address": "789 Nourish Ave",
+      "hours": "Mon–Fri, 7:00 AM – 4:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "Can I choose my meals?",
+        "answer": "Yes, you can select from our weekly menu. We accommodate dietary restrictions including diabetic, low-sodium, vegetarian, and more."
+      },
+      {
+        "question": "Is there a delivery fee?",
+        "answer": "There is no delivery fee. Meals are provided at no cost to qualifying seniors."
+      }
+    ]
+  },
+  {
+    "id": "community-dining",
+    "title": "Community Dining Programs",
+    "category": "Meals",
+    "type": "Social",
+    "icon": "Users",
+    "description": "Enjoy nutritious meals in a friendly social setting at local community centers. A great way to stay connected while eating well.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Spouses of eligible seniors (any age)",
+      "No reservation needed for most locations",
+      "Open to all income levels"
+    ],
+    "benefits": [
+      "Free nutritious meals",
+      "Social interaction and companionship",
+      "Nutrition education workshops",
+      "Transportation assistance to dining sites",
+      "Special holiday meals and events"
+    ],
+    "steps": [
+      "Find your nearest community dining site",
+      "Visit during meal service hours",
+      "Register with a simple sign-in form",
+      "Enjoy your meal and the company",
+      "Ask about additional programs available"
+    ],
+    "contact": {
+      "phone": "1-800-555-DINE",
+      "email": "dining@webtopia.org",
+      "address": "Multiple locations citywide",
+      "hours": "Lunch served Mon–Fri, 11:30 AM – 1:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "Do I need to sign up in advance?",
+        "answer": "Most locations welcome walk-ins, but calling ahead helps us prepare the right amount of food."
+      },
+      {
+        "question": "Is transportation available?",
+        "answer": "Yes, many locations offer free shuttle service. Call your local dining site for details."
+      }
+    ]
+  },
+  {
+    "id": "senior-transport",
+    "title": "Senior Transportation Service",
+    "category": "Transportation",
+    "type": "Door-to-Door",
+    "icon": "Car",
+    "description": "Safe, reliable door-to-door transportation for medical appointments, grocery shopping, social activities, and essential errands.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Adults with disabilities",
+      "Must reside within service area",
+      "Advance booking required (24-48 hours)"
+    ],
+    "benefits": [
+      "Door-to-door pickup and drop-off",
+      "Wheelchair-accessible vehicles",
+      "Trained and certified drivers",
+      "Affordable flat-rate fares",
+      "Companion can ride along free"
+    ],
+    "steps": [
+      "Call to register as a new rider",
+      "Provide your address and mobility needs",
+      "Book your ride at least 24 hours in advance",
+      "Be ready 10 minutes before pickup time",
+      "Pay the flat fare to the driver"
+    ],
+    "contact": {
+      "phone": "1-800-555-RIDE",
+      "email": "transport@webtopia.org",
+      "address": "321 Transit Way",
+      "hours": "Mon–Sat, 6:00 AM – 8:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "How far in advance should I book?",
+        "answer": "We recommend booking at least 24–48 hours in advance. Same-day rides may be available but are not guaranteed."
+      },
+      {
+        "question": "Are the vehicles wheelchair accessible?",
+        "answer": "Yes, all our vehicles are equipped with wheelchair ramps and secure fastening systems."
+      }
+    ]
+  },
+  {
+    "id": "legal-aid-seniors",
+    "title": "Senior Legal Aid Services",
+    "category": "Legal Aid",
+    "type": "Legal",
+    "icon": "Scale",
+    "description": "Free and low-cost legal assistance for seniors on matters including wills, power of attorney, housing disputes, elder abuse, benefits claims, and consumer protection.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Priority given to low-income seniors",
+      "No prior legal representation required",
+      "Available for civil matters only"
+    ],
+    "benefits": [
+      "Free legal consultations",
+      "Help with wills and advance directives",
+      "Elder abuse protection",
+      "Benefits and insurance claim assistance",
+      "Housing rights advocacy"
+    ],
+    "steps": [
+      "Call the Legal Aid Hotline",
+      "Describe your legal concern",
+      "Get matched with a volunteer attorney",
+      "Attend your consultation (in-person or phone)",
+      "Receive follow-up support as needed"
+    ],
+    "contact": {
+      "phone": "1-800-555-LAWS",
+      "email": "legal@webtopia.org",
+      "address": "555 Justice Blvd, Floor 3",
+      "hours": "Mon–Fri, 9:00 AM – 5:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "Is there a cost for legal help?",
+        "answer": "Initial consultations are free. Extended services are available on a sliding scale based on income."
+      },
+      {
+        "question": "Can you help with elder abuse cases?",
+        "answer": "Yes. We provide legal advocacy and connect you with protective services immediately."
+      }
+    ]
+  },
+  {
+    "id": "financial-assistance",
+    "title": "Financial Assistance Programs",
+    "category": "Financial Support",
+    "type": "Financial",
+    "icon": "DollarSign",
+    "description": "Programs to help seniors manage finances, access benefits, apply for assistance with utilities, rent, medications, and other essential expenses.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Income-based qualifications may apply",
+      "Must provide proof of residence",
+      "U.S. citizens or legal residents"
+    ],
+    "benefits": [
+      "Utility bill assistance",
+      "Medication cost programs",
+      "Rent and housing subsidies",
+      "Tax preparation assistance",
+      "Benefits enrollment help (Medicare, Medicaid, SSI)"
+    ],
+    "steps": [
+      "Call or visit our Financial Assistance office",
+      "Bring income documentation and ID",
+      "Complete a benefits screening",
+      "Get connected to eligible programs",
+      "Receive ongoing case management support"
+    ],
+    "contact": {
+      "phone": "1-800-555-FUND",
+      "email": "finance@webtopia.org",
+      "address": "678 Benefit St, Suite 400",
+      "hours": "Mon–Fri, 8:30 AM – 4:30 PM"
+    },
+    "faqs": [
+      {
+        "question": "What documents do I need?",
+        "answer": "Please bring a valid ID, proof of income (Social Security statement, pension, etc.), proof of residence, and any current bills you need help with."
+      },
+      {
+        "question": "Can you help me enroll in Medicare?",
+        "answer": "Yes! Our benefits counselors are certified to help with Medicare, Medicaid, and other program enrollments."
+      }
+    ]
+  },
+  {
+    "id": "companion-care",
+    "title": "Companion Care & Visits",
+    "category": "Companion Care",
+    "type": "Social Support",
+    "icon": "HeartHandshake",
+    "description": "Friendly companion visits for seniors who live alone or feel isolated. Companions provide conversation, light activities, errands, and emotional support.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Living alone or with limited social contact",
+      "No income requirements",
+      "Self-referral or referral by caregiver"
+    ],
+    "benefits": [
+      "Regular weekly visits",
+      "Matched with a compatible companion",
+      "Accompaniment to appointments and outings",
+      "Light housekeeping and errand help",
+      "Phone call check-ins between visits"
+    ],
+    "steps": [
+      "Call or submit an online request",
+      "Tell us about your interests and needs",
+      "We match you with a trained companion",
+      "Begin weekly visits within two weeks",
+      "Provide feedback to improve your experience"
+    ],
+    "contact": {
+      "phone": "1-800-555-PALS",
+      "email": "companions@webtopia.org",
+      "address": "890 Friendship Circle",
+      "hours": "Mon–Fri, 9:00 AM – 5:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "How are companions screened?",
+        "answer": "All companions undergo background checks, training, and are matched based on shared interests and personality."
+      },
+      {
+        "question": "Can I request a specific schedule?",
+        "answer": "Yes, we work with you to find a schedule that fits your routine and preferences."
+      }
+    ]
+  },
+  {
+    "id": "in-home-care",
+    "title": "In-Home Care Services",
+    "category": "Healthcare",
+    "type": "Home Care",
+    "icon": "Home",
+    "description": "Professional in-home care assistance including personal care, medication management, mobility support, and skilled nursing for seniors who prefer to age in place.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Doctor's referral may be needed for skilled nursing",
+      "Assessment required for level of care",
+      "Available with private pay or insurance"
+    ],
+    "benefits": [
+      "Personalized care plans",
+      "Certified home health aides",
+      "Medication management and reminders",
+      "Physical therapy at home",
+      "24/7 emergency support line"
+    ],
+    "steps": [
+      "Contact us for a free in-home assessment",
+      "A care coordinator visits your home",
+      "We create a customized care plan",
+      "Care begins with a matched aide",
+      "Regular reviews and plan adjustments"
+    ],
+    "contact": {
+      "phone": "1-800-555-HOME",
+      "email": "homecare@webtopia.org",
+      "address": "234 Care Lane",
+      "hours": "24/7 support line available"
+    },
+    "faqs": [
+      {
+        "question": "Does insurance cover in-home care?",
+        "answer": "Many insurance plans, Medicare, and Medicaid cover certain in-home services. We help you understand your coverage."
+      },
+      {
+        "question": "Can I change my caregiver?",
+        "answer": "Absolutely. Your comfort is our priority. We'll work to find the best match for you."
+      }
+    ]
+  },
+  {
+    "id": "assistive-devices",
+    "title": "Assistive Devices & Equipment",
+    "category": "Healthcare",
+    "type": "Equipment",
+    "icon": "Accessibility",
+    "description": "Access to mobility aids, hearing devices, vision aids, and daily living equipment to help seniors maintain independence at home.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Doctor's prescription for medical devices",
+      "Income-based assistance available",
+      "Device training included"
+    ],
+    "benefits": [
+      "Free or reduced-cost devices",
+      "Walkers, wheelchairs, and canes",
+      "Hearing aids and amplifiers",
+      "Magnifiers and large-print tools",
+      "Home safety equipment (grab bars, shower seats)"
+    ],
+    "steps": [
+      "Get a referral from your doctor if needed",
+      "Contact our Assistive Devices team",
+      "Complete a needs assessment",
+      "Receive your device with training",
+      "Follow up for adjustments or replacements"
+    ],
+    "contact": {
+      "phone": "1-800-555-AIDS",
+      "email": "devices@webtopia.org",
+      "address": "567 Independence Way",
+      "hours": "Mon–Fri, 9:00 AM – 4:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "Are devices free?",
+        "answer": "Many devices are available at no cost or reduced cost based on income. Insurance may also cover prescribed devices."
+      },
+      {
+        "question": "Do you offer training on how to use devices?",
+        "answer": "Yes, every device comes with hands-on training and follow-up support."
+      }
+    ]
+  },
+  {
+    "id": "emergency-response",
+    "title": "Personal Emergency Response",
+    "category": "Healthcare",
+    "type": "Emergency",
+    "icon": "Bell",
+    "description": "Wearable personal emergency response systems that connect seniors to help at the push of a button, 24/7.",
+    "eligibility": [
+      "Seniors aged 60 and above",
+      "Living alone or at risk of falls",
+      "No income requirements for basic devices",
+      "Available nationwide"
+    ],
+    "benefits": [
+      "24/7 emergency monitoring",
+      "One-button help activation",
+      "Automatic fall detection option",
+      "GPS tracking for mobile devices",
+      "Direct connection to emergency services"
+    ],
+    "steps": [
+      "Call to request a personal emergency device",
+      "Choose your device type (home or mobile)",
+      "Receive and set up your device",
+      "Test the device with our monitoring center",
+      "Wear it daily for peace of mind"
+    ],
+    "contact": {
+      "phone": "1-800-555-HELP",
+      "email": "emergency@webtopia.org",
+      "address": "901 Safety Drive",
+      "hours": "24/7 monitoring"
+    },
+    "faqs": [
+      {
+        "question": "How quickly will help arrive?",
+        "answer": "When you press the button, our monitoring center responds within 30 seconds and dispatches help immediately."
+      },
+      {
+        "question": "Does it work outside my home?",
+        "answer": "Our mobile devices with GPS work anywhere with cellular coverage."
+      }
+    ]
+  },
+  {
+    "id": "caregiver-support",
+    "title": "Caregiver Support & Respite",
+    "category": "Companion Care",
+    "type": "Caregiver",
+    "icon": "HandHeart",
+    "description": "Support programs for family caregivers including respite care, training, counseling, and support groups to prevent burnout.",
+    "eligibility": [
+      "Family caregivers of seniors aged 60+",
+      "Informal (unpaid) caregivers",
+      "No income requirements",
+      "Available in-person and online"
+    ],
+    "benefits": [
+      "Respite care (temporary relief)",
+      "Caregiver training workshops",
+      "Support group sessions",
+      "Individual counseling",
+      "Emergency backup care"
+    ],
+    "steps": [
+      "Contact our Caregiver Support line",
+      "Share your caregiving situation",
+      "Get a personalized support plan",
+      "Access respite care and resources",
+      "Join a caregiver support group"
+    ],
+    "contact": {
+      "phone": "1-800-555-REST",
+      "email": "caregivers@webtopia.org",
+      "address": "345 Support Way",
+      "hours": "Mon–Fri, 8:00 AM – 6:00 PM"
+    },
+    "faqs": [
+      {
+        "question": "What is respite care?",
+        "answer": "Respite care provides temporary relief for caregivers. A trained professional takes over caregiving duties so you can rest, run errands, or take a break."
+      },
+      {
+        "question": "Are support groups available online?",
+        "answer": "Yes, we offer both in-person and virtual support groups to fit your schedule."
+      }
+    ]
+  }
+]

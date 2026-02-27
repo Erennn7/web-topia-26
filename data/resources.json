@@ -1,0 +1,202 @@
+[
+  {
+    "id": "medicare-guide",
+    "title": "Understanding Medicare: A Complete Guide",
+    "category": "Healthcare",
+    "icon": "FileText",
+    "summary": "Learn about Medicare Parts A, B, C, and D, enrollment periods, and how to choose the right plan for your needs.",
+    "content": [
+      {
+        "heading": "What is Medicare?",
+        "text": "Medicare is a federal health insurance program for people 65 and older, and certain younger people with disabilities. It covers hospital stays, doctor visits, prescription drugs, and more."
+      },
+      {
+        "heading": "Medicare Parts Explained",
+        "text": "Part A covers hospital insurance. Part B covers medical insurance. Part C (Medicare Advantage) bundles A and B with extra benefits. Part D covers prescription drugs."
+      },
+      {
+        "heading": "When to Enroll",
+        "text": "Your Initial Enrollment Period starts 3 months before your 65th birthday and ends 3 months after. Missing this window may result in late enrollment penalties."
+      },
+      {
+        "heading": "Getting Help",
+        "text": "Free Medicare counseling is available through your State Health Insurance Assistance Program (SHIP). Lumis can connect you with a certified counselor."
+      }
+    ]
+  },
+  {
+    "id": "fall-prevention",
+    "title": "Fall Prevention Tips for Seniors",
+    "category": "Safety",
+    "icon": "ShieldCheck",
+    "summary": "Falls are the leading cause of injury among seniors. Learn practical steps to reduce your risk and keep your home safe.",
+    "content": [
+      {
+        "heading": "Home Safety Checklist",
+        "text": "Remove tripping hazards like loose rugs and clutter. Install grab bars in the bathroom. Ensure good lighting in hallways and staircases. Use non-slip mats in the shower."
+      },
+      {
+        "heading": "Stay Active",
+        "text": "Regular exercise improves balance and strength. Consider tai chi, gentle yoga, or walking programs designed for seniors."
+      },
+      {
+        "heading": "Review Your Medications",
+        "text": "Some medications can cause dizziness or drowsiness. Ask your doctor or pharmacist to review your prescriptions for fall-risk side effects."
+      },
+      {
+        "heading": "Vision and Footwear",
+        "text": "Get regular eye exams and update your glasses. Wear well-fitting, non-slip shoes both indoors and outdoors."
+      }
+    ]
+  },
+  {
+    "id": "nutrition-aging",
+    "title": "Healthy Eating for Seniors",
+    "category": "Nutrition",
+    "icon": "Apple",
+    "summary": "Good nutrition is essential for healthy aging. Discover tips for maintaining a balanced diet and managing common dietary challenges.",
+    "content": [
+      {
+        "heading": "Key Nutrients for Seniors",
+        "text": "Focus on calcium and vitamin D for bone health, B12 for energy, fiber for digestion, and omega-3 fatty acids for heart and brain health."
+      },
+      {
+        "heading": "Staying Hydrated",
+        "text": "Seniors are more prone to dehydration. Aim for 6-8 glasses of water daily. Set reminders if you tend to forget."
+      },
+      {
+        "heading": "Managing Dietary Restrictions",
+        "text": "If you have diabetes, heart disease, or other conditions, work with a dietitian to create a meal plan that meets your nutritional needs while managing your health."
+      },
+      {
+        "heading": "Meal Assistance Programs",
+        "text": "If cooking is difficult, consider home-delivered meal programs or community dining options. Lumis can help you find services in your area."
+      }
+    ]
+  },
+  {
+    "id": "scam-protection",
+    "title": "Protecting Yourself from Scams",
+    "category": "Safety",
+    "icon": "ShieldAlert",
+    "summary": "Seniors are often targeted by scammers. Learn how to recognize and avoid common scams targeting older adults.",
+    "content": [
+      {
+        "heading": "Common Scams Targeting Seniors",
+        "text": "Watch out for phone scams (fake IRS calls, tech support), email phishing, romance scams, Medicare fraud, and grandparent scams where callers pretend to be a grandchild in trouble."
+      },
+      {
+        "heading": "Warning Signs",
+        "text": "Be suspicious of unsolicited calls asking for money or personal info, pressure to act immediately, requests for gift cards or wire transfers, and offers that seem too good to be true."
+      },
+      {
+        "heading": "How to Protect Yourself",
+        "text": "Never give personal information to unknown callers. Don't click links in suspicious emails. Verify requests by calling the organization directly using a known number."
+      },
+      {
+        "heading": "Reporting Scams",
+        "text": "Report suspected scams to the FTC at 1-877-FTC-HELP, your local police, and the Elder Fraud Hotline at 1-833-FRAUD-11."
+      }
+    ]
+  },
+  {
+    "id": "staying-connected",
+    "title": "Staying Socially Connected",
+    "category": "Wellbeing",
+    "icon": "Heart",
+    "summary": "Social isolation can impact health. Discover ways to stay connected with family, friends, and your community.",
+    "content": [
+      {
+        "heading": "Why Connection Matters",
+        "text": "Social isolation increases the risk of depression, cognitive decline, and heart disease. Regular social interaction is as important as physical exercise for healthy aging."
+      },
+      {
+        "heading": "Ways to Stay Connected",
+        "text": "Join a senior center or community group. Volunteer for a cause you care about. Take a class or workshop. Attend community dining programs."
+      },
+      {
+        "heading": "Using Technology",
+        "text": "Video calls, social media, and messaging apps can help you stay in touch with family. Many libraries and senior centers offer free technology classes."
+      },
+      {
+        "heading": "Companion Programs",
+        "text": "If you're feeling isolated, companion visit programs can match you with a friendly visitor. Contact Lumis to learn about options in your area."
+      }
+    ]
+  },
+  {
+    "id": "caregiver-guide",
+    "title": "A Guide for Family Caregivers",
+    "category": "Caregiving",
+    "icon": "Users",
+    "summary": "Caregiving can be rewarding but challenging. Find tips, resources, and support to help you care for your loved one while taking care of yourself.",
+    "content": [
+      {
+        "heading": "Understanding Your Role",
+        "text": "As a caregiver, you may help with daily activities, medical care, finances, and emotional support. It's important to understand both your loved one's needs and your own limits."
+      },
+      {
+        "heading": "Avoiding Burnout",
+        "text": "Take regular breaks using respite care. Join a support group. Ask for help from family and friends. Don't try to do everything alone."
+      },
+      {
+        "heading": "Legal and Financial Planning",
+        "text": "Help your loved one prepare advance directives, power of attorney, and organize important documents. Consult a senior legal aid service for guidance."
+      },
+      {
+        "heading": "Resources for Caregivers",
+        "text": "Lumis offers caregiver support programs, respite care referrals, and training workshops. Call our helpline to get connected."
+      }
+    ]
+  },
+  {
+    "id": "exercise-guide",
+    "title": "Safe Exercise for Seniors",
+    "category": "Wellbeing",
+    "icon": "Dumbbell",
+    "summary": "Stay active and healthy with exercises designed for older adults. Learn about safe routines that improve strength, balance, and flexibility.",
+    "content": [
+      {
+        "heading": "Benefits of Exercise",
+        "text": "Regular physical activity helps maintain mobility, reduces fall risk, improves mood, strengthens bones, and helps manage chronic conditions like diabetes and arthritis."
+      },
+      {
+        "heading": "Recommended Activities",
+        "text": "Walking, swimming, tai chi, chair exercises, and gentle stretching are excellent low-impact options. Aim for at least 150 minutes of moderate activity per week."
+      },
+      {
+        "heading": "Getting Started Safely",
+        "text": "Consult your doctor before starting a new exercise routine. Start slowly, warm up before activity, and listen to your body. Stop if you feel pain or dizziness."
+      },
+      {
+        "heading": "Finding Exercise Programs",
+        "text": "Many senior centers, YMCAs, and community centers offer free or low-cost exercise classes for older adults. Ask Lumis for programs near you."
+      }
+    ]
+  },
+  {
+    "id": "housing-options",
+    "title": "Senior Housing Options Explained",
+    "category": "Housing",
+    "icon": "Home",
+    "summary": "From aging in place to assisted living, understand the different housing options available for seniors and how to choose the right one.",
+    "content": [
+      {
+        "heading": "Aging in Place",
+        "text": "Many seniors prefer to stay in their own homes. Home modifications, in-home care services, and community support can make this possible safely."
+      },
+      {
+        "heading": "Independent Living Communities",
+        "text": "These offer private apartments with optional services like meals, housekeeping, and social activities. Ideal for active seniors who want a maintenance-free lifestyle."
+      },
+      {
+        "heading": "Assisted Living Facilities",
+        "text": "Assisted living provides personal care assistance, meals, and activities in a residential setting. It's suitable for seniors who need daily help but not full-time nursing care."
+      },
+      {
+        "heading": "Paying for Senior Housing",
+        "text": "Options include personal savings, long-term care insurance, Medicaid (for qualifying individuals), and VA benefits for veterans. A financial counselor can help you plan."
+      }
+    ]
+  }
+]
