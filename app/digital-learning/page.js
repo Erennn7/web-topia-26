@@ -8,10 +8,9 @@ import {
     Volume2, Footprints, Eye,
 } from "lucide-react";
 import AppSimulation from "@/components/AppSimulation";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 const fadeIn = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 12 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
     transition: { duration: 0.4 },
@@ -23,23 +22,17 @@ const apps = [
         key: "whatsapp",
         simKey: "whatsapp",
         icon: MessageCircle,
-        gradient: "from-green-500 to-emerald-600",
-        bg: "bg-green-50 dark:bg-green-900/20",
-        border: "border-green-200 dark:border-green-800",
-        iconBg: "bg-green-500",
-        hoverShadow: "hover:shadow-green-200/50 dark:hover:shadow-green-900/30",
-        features: ["Send & receive payments", "Step-by-step guidance", "Voice instructions"],
+        iconBg: "bg-secondary",
+        border: "border-card-border",
+        features: ["Send & receive payments via chat", "Step-by-step guidance", "Voice instructions"],
     },
     {
         id: "gpay",
         key: "gpay",
         simKey: "gpay",
         icon: IndianRupee,
-        gradient: "from-blue-500 to-indigo-600",
-        bg: "bg-blue-50 dark:bg-blue-900/20",
-        border: "border-blue-200 dark:border-blue-800",
-        iconBg: "bg-blue-500",
-        hoverShadow: "hover:shadow-blue-200/50 dark:hover:shadow-blue-900/30",
+        iconBg: "bg-accent",
+        border: "border-card-border",
         features: ["UPI payments made easy", "Secure PIN guidance", "Transaction history"],
     },
 ];
@@ -50,17 +43,15 @@ export default function DigitalLearningPage() {
     const dl = t.digitalLearning || {};
 
     return (
-        <div className="relative min-h-screen">
-            <AnimatedBackground />
-
+        <div className="min-h-screen">
             <AnimatePresence mode="wait">
                 {selectedApp ? (
                     <motion.div
                         key="simulation"
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10"
+                        exit={{ opacity: 0, y: -12 }}
+                        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10"
                     >
                         <AppSimulation app={selectedApp} onExit={() => setSelectedApp(null)} />
                     </motion.div>
@@ -70,94 +61,90 @@ export default function DigitalLearningPage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 relative z-10"
+                        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16"
                     >
                         {/* Hero */}
-                        <motion.div {...fadeIn} className="text-center mb-12">
-                            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                                <Smartphone size={16} />
+                        <motion.div {...fadeIn} className="text-center mb-10">
+                            <div className="inline-flex items-center gap-1.5 bg-warm text-primary px-3 py-1.5 rounded-full text-xs font-medium border border-card-border mb-4">
+                                <Smartphone size={13} strokeWidth={1.8} />
                                 {dl.badge || "Digital Learning"}
                             </div>
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 tracking-tight">
                                 {dl.title || "Learn Digital Payments"}
                             </h1>
-                            <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-base sm:text-lg text-muted max-w-xl mx-auto leading-relaxed">
                                 {dl.subtitle || "Practice using WhatsApp and Google Pay safely with our step-by-step interactive simulator"}
                             </p>
                         </motion.div>
 
                         {/* Feature highlights */}
-                        <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
+                        <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 max-w-2xl mx-auto">
                             {[
                                 { icon: Footprints, label: dl.featureStep || "Step-by-Step Guide", desc: dl.featureStepDesc || "Easy guided instructions" },
                                 { icon: Volume2, label: dl.featureVoice || "Voice Instructions", desc: dl.featureVoiceDesc || "Listen to every step" },
                                 { icon: ShieldCheck, label: dl.featureSafe || "100% Safe", desc: dl.featureSafeDesc || "No real money involved" },
                             ].map((feat, i) => (
-                                <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-card-bg border border-card-border">
-                                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                        <feat.icon size={20} className="text-primary" />
+                                <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl bg-card-bg border border-card-border premium-shadow">
+                                    <div className="w-9 h-9 rounded-lg bg-warm flex items-center justify-center flex-shrink-0">
+                                        <feat.icon size={16} className="text-primary" strokeWidth={1.8} />
                                     </div>
                                     <div>
-                                        <p className="text-sm font-semibold text-foreground">{feat.label}</p>
-                                        <p className="text-xs text-muted">{feat.desc}</p>
+                                        <p className="text-xs font-semibold text-foreground">{feat.label}</p>
+                                        <p className="text-[10px] text-muted">{feat.desc}</p>
                                     </div>
                                 </div>
                             ))}
                         </motion.div>
 
                         {/* App cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {apps.map((app, i) => (
                                 <motion.div
                                     key={app.id}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.15, duration: 0.5 }}
+                                    transition={{ delay: i * 0.1, duration: 0.4 }}
                                 >
                                     <div
-                                        className={`group relative bg-card-bg border ${app.border} rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-xl ${app.hoverShadow} cursor-pointer overflow-hidden`}
+                                        className={`group relative bg-card-bg border ${app.border} rounded-2xl p-5 sm:p-6 transition-all duration-300 premium-shadow cursor-pointer overflow-hidden`}
                                         onClick={() => setSelectedApp(app.simKey)}
                                         role="button"
                                         tabIndex={0}
                                         onKeyDown={(e) => e.key === "Enter" && setSelectedApp(app.simKey)}
                                         aria-label={`Start learning ${app.id === "gpay" ? "Google Pay" : "WhatsApp"}`}
                                     >
-                                        {/* Gradient accent */}
-                                        <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${app.gradient}`} />
+                                        {/* Top accent */}
+                                        <div className="absolute top-0 left-0 right-0 h-1 bg-primary opacity-60" />
 
                                         {/* Icon */}
-                                        <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl ${app.iconBg} flex items-center justify-center mb-5 shadow-lg group-hover:scale-105 transition-transform`}>
-                                            <app.icon size={32} className="text-white sm:w-10 sm:h-10" />
+                                        <div className={`w-14 h-14 rounded-2xl ${app.iconBg} flex items-center justify-center mb-4 shadow-sm group-hover:scale-105 transition-transform`}>
+                                            <app.icon size={24} className="text-white" />
                                         </div>
 
-                                        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                                        <h2 className="text-lg sm:text-xl font-bold text-foreground mb-1.5">
                                             {dl[`${app.key}Title`] || (app.id === "gpay" ? "Google Pay" : "WhatsApp Payments")}
                                         </h2>
-                                        <p className="text-muted text-sm sm:text-base mb-5 leading-relaxed">
+                                        <p className="text-muted text-sm mb-4 leading-relaxed">
                                             {dl[`${app.key}Desc`] || (app.id === "gpay"
                                                 ? "Learn to send money, check balance, and view transaction history using Google Pay."
                                                 : "Learn to send payments through WhatsApp chat to your contacts safely.")}
                                         </p>
 
-                                        {/* Feature list */}
-                                        <ul className="space-y-2 mb-6">
+                                        <ul className="space-y-1.5 mb-5">
                                             {app.features.map((f, j) => (
-                                                <li key={j} className="flex items-center gap-2 text-sm text-foreground">
-                                                    <div className="w-5 h-5 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0">
-                                                        <Eye size={12} className="text-success" />
+                                                <li key={j} className="flex items-center gap-2 text-xs text-foreground">
+                                                    <div className="w-4 h-4 rounded-full bg-success/15 flex items-center justify-center flex-shrink-0">
+                                                        <Eye size={9} className="text-success" />
                                                     </div>
                                                     {f}
                                                 </li>
                                             ))}
                                         </ul>
 
-                                        {/* CTA button */}
-                                        <button
-                                            className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r ${app.gradient} hover:opacity-90 transition-all min-h-[48px] shadow-lg group-hover:shadow-xl`}
-                                        >
+                                        <button className="w-full flex items-center justify-center gap-1.5 py-3 rounded-xl text-sm font-semibold text-background bg-foreground hover:opacity-90 transition-all min-h-[44px]">
                                             {dl.startLearning || "Start Learning"}
-                                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                            <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                                         </button>
                                     </div>
                                 </motion.div>
@@ -165,12 +152,9 @@ export default function DigitalLearningPage() {
                         </div>
 
                         {/* Safety note */}
-                        <motion.div
-                            {...fadeIn}
-                            className="mt-10 text-center"
-                        >
-                            <div className="inline-flex items-center gap-2 text-sm text-muted bg-section-bg px-5 py-3 rounded-full">
-                                <ShieldCheck size={16} className="text-success" />
+                        <motion.div {...fadeIn} className="mt-8 text-center">
+                            <div className="inline-flex items-center gap-1.5 text-xs text-muted bg-warm px-4 py-2 rounded-full border border-card-border">
+                                <ShieldCheck size={13} className="text-success" />
                                 {dl.safetyNote || "This is a safe simulation. No real money or data is used."}
                             </div>
                         </motion.div>

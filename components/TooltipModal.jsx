@@ -6,39 +6,39 @@ export default function TooltipModal({ instruction, onNext, onBack, currentStep,
     return (
         <motion.div
             key={currentStep}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="w-full bg-card-bg border border-card-border rounded-2xl shadow-lg p-4 sm:p-5"
+            transition={{ duration: 0.25 }}
+            className="w-full bg-card-bg border border-card-border rounded-2xl premium-shadow p-4 sm:p-5"
             role="region"
             aria-label={`Step ${currentStep} of ${totalSteps}`}
         >
-            {/* Progress bar */}
+            {/* Progress */}
             <div className="flex items-center gap-3 mb-3">
-                <span className="text-sm font-bold text-primary whitespace-nowrap">
-                    Step {currentStep}/{totalSteps}
+                <span className="text-xs font-semibold text-primary tracking-wide whitespace-nowrap">
+                    {currentStep} / {totalSteps}
                 </span>
-                <div className="flex-1 h-2.5 bg-section-bg rounded-full overflow-hidden">
+                <div className="flex-1 h-1.5 bg-section-bg rounded-full overflow-hidden">
                     <motion.div
                         className="h-full bg-primary rounded-full"
                         initial={{ width: 0 }}
                         animate={{ width: `${(currentStep / totalSteps) * 100}%` }}
-                        transition={{ duration: 0.4 }}
+                        transition={{ duration: 0.35 }}
                     />
                 </div>
             </div>
 
             {/* Instruction */}
-            <p className="text-base sm:text-lg font-medium text-foreground leading-relaxed mb-4">
-                💡 {instruction}
+            <p className="text-[15px] sm:text-base text-foreground leading-relaxed mb-4">
+                {instruction}
             </p>
 
-            {/* Navigation buttons */}
-            <div className="flex items-center gap-3">
+            {/* Buttons */}
+            <div className="flex items-center gap-2">
                 {canGoBack && (
                     <button
                         onClick={onBack}
-                        className="flex-1 px-4 py-3 rounded-xl text-base font-semibold bg-section-bg text-foreground hover:bg-card-border transition-all min-h-[48px] focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="flex-1 px-3 py-2.5 rounded-xl text-sm font-medium bg-section-bg text-foreground hover:bg-warm-dark transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-primary-light"
                         aria-label="Go to previous step"
                     >
                         ← Back
@@ -46,7 +46,7 @@ export default function TooltipModal({ instruction, onNext, onBack, currentStep,
                 )}
                 <button
                     onClick={onNext}
-                    className="flex-1 px-4 py-3 rounded-xl text-base font-semibold bg-primary text-white hover:bg-primary-dark transition-all min-h-[48px] focus:outline-none focus:ring-2 focus:ring-primary shadow-md hover:shadow-lg"
+                    className="flex-1 px-3 py-2.5 rounded-xl text-sm font-medium bg-foreground text-background hover:opacity-90 transition-all min-h-[44px] focus:outline-none focus:ring-2 focus:ring-primary-light"
                     aria-label={currentStep === totalSteps ? "Finish tutorial" : "Go to next step"}
                 >
                     {currentStep === totalSteps ? "Finish ✓" : "Next →"}

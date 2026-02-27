@@ -51,30 +51,21 @@ export default function TTSControl({ text, autoPlay = true }) {
     if (!supported) return null;
 
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
             <button
                 onClick={() => (speaking ? stop() : speak(text))}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-base font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary bg-primary/10 text-primary hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 min-h-[48px]"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-primary-light bg-warm text-foreground hover:bg-warm-dark min-h-[40px] border border-card-border"
                 aria-label={speaking ? "Pause reading" : "Read aloud"}
             >
-                {speaking ? (
-                    <>
-                        <VolumeX size={22} strokeWidth={2} />
-                        <span className="hidden sm:inline">Pause</span>
-                    </>
-                ) : (
-                    <>
-                        <Volume2 size={22} strokeWidth={2} />
-                        <span className="hidden sm:inline">Listen</span>
-                    </>
-                )}
+                {speaking ? <VolumeX size={16} strokeWidth={1.8} /> : <Volume2 size={16} strokeWidth={1.8} />}
+                <span className="hidden sm:inline">{speaking ? "Pause" : "Listen"}</span>
             </button>
             <button
                 onClick={() => speak(text)}
-                className="flex items-center justify-center w-[48px] h-[48px] rounded-xl bg-section-bg hover:bg-card-border text-muted hover:text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex items-center justify-center w-[40px] h-[40px] rounded-xl bg-warm hover:bg-warm-dark text-muted hover:text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-primary-light border border-card-border"
                 aria-label="Replay reading"
             >
-                <RotateCcw size={20} strokeWidth={2} />
+                <RotateCcw size={15} strokeWidth={1.8} />
             </button>
         </div>
     );
