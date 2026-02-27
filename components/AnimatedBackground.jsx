@@ -2,26 +2,73 @@
 
 import { motion } from "framer-motion";
 
+const wavePath1 = "M0,120 C160,180 320,60 480,120 C640,180 800,60 960,120 C1120,180 1280,60 1440,120";
+const wavePath2 = "M0,160 C200,100 360,220 540,160 C720,100 900,220 1080,160 C1260,100 1440,220 1600,160";
+const wavePath3 = "M0,200 C180,260 360,140 540,200 C720,260 900,140 1080,200 C1260,260 1440,140 1600,200";
+const wavePath4 = "M0,80 C240,140 400,20 600,80 C800,140 1000,20 1200,80 C1400,140 1600,20 1800,80";
+const wavePath5 = "M0,240 C200,180 440,300 640,240 C840,180 1040,300 1240,240 C1440,180 1600,300 1800,240";
+
+function WaveLines({ opacity = 0.06, yOffset = 0, speed = 25, className = "" }) {
+  return (
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} style={{ top: yOffset }}>
+      <motion.svg
+        viewBox="0 0 1600 320"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute w-[200%] h-full left-0 top-0"
+        animate={{ x: [0, -800] }}
+        transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
+        style={{ opacity }}
+      >
+        <path d={wavePath1} stroke="currentColor" strokeWidth="1.5" className="text-primary" />
+        <path d={wavePath2} stroke="currentColor" strokeWidth="1" className="text-primary" />
+        <path d={wavePath3} stroke="currentColor" strokeWidth="1.5" className="text-secondary" />
+      </motion.svg>
+    </div>
+  );
+}
+
+function WaveLinesReverse({ opacity = 0.04, yOffset = 0, speed = 35, className = "" }) {
+  return (
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} style={{ top: yOffset }}>
+      <motion.svg
+        viewBox="0 0 1800 320"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute w-[200%] h-full -left-[50%] top-0"
+        animate={{ x: [0, 900] }}
+        transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
+        style={{ opacity }}
+      >
+        <path d={wavePath4} stroke="currentColor" strokeWidth="1" className="text-accent" />
+        <path d={wavePath5} stroke="currentColor" strokeWidth="1.5" className="text-primary" />
+      </motion.svg>
+    </div>
+  );
+}
+
 export default function AnimatedBackground({ variant = "default" }) {
   if (variant === "hero") {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute top-10 left-[10%] w-40 h-40 bg-primary/[0.06] rounded-full blur-2xl animate-float-slow" />
-        <div className="absolute top-32 right-[15%] w-28 h-28 bg-accent/[0.08] rounded-full blur-xl animate-float-medium" style={{ animationDelay: "1s" }} />
-        <div className="absolute bottom-20 left-[20%] w-36 h-36 bg-primary-light/[0.05] rounded-full blur-2xl animate-float-medium" style={{ animationDelay: "3s" }} />
-        <div className="absolute bottom-10 right-[10%] w-48 h-48 bg-secondary/[0.04] rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-[5%] w-20 h-20 bg-primary/[0.07] rounded-full blur-lg animate-pulse-soft" />
-        <div className="absolute top-20 left-[50%] w-16 h-16 bg-accent/[0.06] rounded-full blur-lg animate-float-fast" style={{ animationDelay: "4s" }} />
+        {/* Soft warm glows */}
+        <motion.div
+          animate={{ y: [0, -20, 0], x: [0, 15, 0] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-warm dark:bg-warm blur-[150px] opacity-60"
+        />
+        <motion.div
+          animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+          transition={{ duration: 35, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+          className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full bg-warm-dark dark:bg-warm-dark blur-[140px] opacity-40"
+        />
 
-        {/* Subtle grid dots */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="currentColor" className="text-primary" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#dots)" />
-        </svg>
+        {/* Wave lines — top set flowing right */}
+        <WaveLines opacity={0.055} yOffset={60} speed={30} />
+        {/* Wave lines — middle set flowing left */}
+        <WaveLinesReverse opacity={0.04} yOffset={200} speed={40} />
+        {/* Wave lines — bottom set flowing right, slower */}
+        <WaveLines opacity={0.035} yOffset={380} speed={50} />
       </div>
     );
   }
@@ -29,16 +76,23 @@ export default function AnimatedBackground({ variant = "default" }) {
   if (variant === "section") {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute top-8 right-[8%] w-32 h-32 bg-primary/[0.04] rounded-full blur-2xl animate-float-slow" />
-        <div className="absolute bottom-12 left-[12%] w-24 h-24 bg-accent/[0.05] rounded-full blur-xl animate-float-medium" style={{ animationDelay: "2s" }} />
+        <motion.div
+          animate={{ y: [0, -12, 0], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-24 right-[5%] w-[400px] h-[400px] rounded-full bg-warm dark:bg-warm blur-[120px]"
+        />
+        <WaveLines opacity={0.03} yOffset={80} speed={45} />
       </div>
     );
   }
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div className="absolute top-16 right-[20%] w-24 h-24 bg-primary/[0.04] rounded-full blur-2xl animate-float-slow" />
-      <div className="absolute bottom-16 left-[15%] w-20 h-20 bg-accent/[0.05] rounded-full blur-xl animate-float-medium" style={{ animationDelay: "1.5s" }} />
+      <motion.div
+        animate={{ opacity: [0.2, 0.35, 0.2] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[15%] right-[10%] w-[400px] h-[400px] rounded-full bg-warm dark:bg-warm blur-[130px]"
+      />
     </div>
   );
 }

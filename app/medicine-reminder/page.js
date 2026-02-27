@@ -11,12 +11,12 @@ import {
 import AnimatedBackground from "@/components/AnimatedBackground";
 
 const defaultMedicines = [
-  { id: "1", name: "Metformin", dosage: "500mg", time: "08:00", frequency: "daily", color: "bg-green-50 dark:bg-green-900/20" },
-  { id: "2", name: "Amlodipine", dosage: "5mg", time: "09:00", frequency: "daily", color: "bg-emerald-50 dark:bg-emerald-900/20" },
-  { id: "3", name: "Calcium + D3", dosage: "1 tablet", time: "13:00", frequency: "daily", color: "bg-teal-50 dark:bg-teal-900/20" },
+  { id: "1", name: "Metformin", dosage: "500mg", time: "08:00", frequency: "daily", color: "bg-primary/10" },
+  { id: "2", name: "Amlodipine", dosage: "5mg", time: "09:00", frequency: "daily", color: "bg-secondary/10" },
+  { id: "3", name: "Calcium + D3", dosage: "1 tablet", time: "13:00", frequency: "daily", color: "bg-info/10" },
 ];
 
-const COLORS = ["bg-green-50 dark:bg-green-900/20", "bg-emerald-50 dark:bg-emerald-900/20", "bg-teal-50 dark:bg-teal-900/20"];
+const COLORS = ["bg-primary/10", "bg-secondary/10", "bg-info/10"];
 
 export default function MedicineReminderPage() {
   const { t, lang } = useLang();
@@ -91,7 +91,7 @@ export default function MedicineReminderPage() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
-            className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-4 text-center">
+            className="glass premium-shadow rounded-2xl p-4 text-center">
             <div className="relative w-14 h-14 mx-auto mb-2">
               <svg className="w-14 h-14 -rotate-90" viewBox="0 0 56 56">
                 <circle cx="28" cy="28" r="24" fill="none" stroke="currentColor" strokeWidth="4" className="text-card-border" />
@@ -104,14 +104,14 @@ export default function MedicineReminderPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.05 }}
-            className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-4 text-center">
+            className="glass premium-shadow rounded-2xl p-4 text-center">
             <Flame size={24} className="text-primary mx-auto mb-1" strokeWidth={1.8} />
             <p className="text-xl font-bold text-foreground">{medStreak}</p>
             <p className="text-xs text-muted">{t.medicine.streak}</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }}
-            className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-4 text-center">
+            className="glass premium-shadow rounded-2xl p-4 text-center">
             <Star size={24} className="text-primary mx-auto mb-1" strokeWidth={1.8} />
             <p className="text-xl font-bold text-foreground">{todayPoints}</p>
             <p className="text-xs text-muted">{t.medicine.points}</p>

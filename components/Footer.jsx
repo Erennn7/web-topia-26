@@ -25,37 +25,37 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-primary-dark text-white" role="contentinfo">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <footer className="border-t border-card-border" role="contentinfo">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
-              <div className="bg-white/20 p-1.5 rounded-xl">
-                <Leaf size={16} className="text-white" strokeWidth={2} />
-              </div>
-              <span className="text-lg font-bold">WEB-<span className="text-primary-light">TOPIA</span></span>
+              <Leaf size={16} className="text-primary" strokeWidth={1.8} />
+              <span className="text-base font-semibold text-foreground tracking-tight">WEB-TOPIA</span>
             </Link>
-            <p className="text-white/50 text-xs">Made with care for seniors</p>
+            <p className="text-muted text-xs leading-relaxed">
+              Helping seniors find the care they deserve.
+            </p>
           </div>
           {links.map((group) => (
             <div key={group.title}>
-              <h3 className="font-semibold text-sm mb-3">{group.title}</h3>
-              <ul className="space-y-1.5">
+              <h3 className="font-medium text-foreground text-sm mb-3">{group.title}</h3>
+              <ul className="space-y-2">
                 {group.items.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/60 hover:text-white text-xs transition-colors">{link.label}</Link>
+                    <Link href={link.href} className="text-muted hover:text-foreground text-sm transition-colors duration-150">{link.label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-        <div className="mt-8 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-4 text-xs text-white/50">
-            <a href="tel:1-800-555-HELP" className="flex items-center gap-1 hover:text-white"><Phone size={11} strokeWidth={2} /> 1-800-555-HELP</a>
-            <a href="mailto:help@webtopia.org" className="flex items-center gap-1 hover:text-white"><Mail size={11} strokeWidth={2} /> help@webtopia.org</a>
+        <div className="mt-12 pt-6 border-t border-card-border flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-5 text-xs text-muted">
+            <a href="tel:1-800-555-HELP" className="flex items-center gap-1.5 hover:text-foreground transition-colors"><Phone size={11} strokeWidth={2} /> 1-800-555-HELP</a>
+            <a href="mailto:help@webtopia.org" className="flex items-center gap-1.5 hover:text-foreground transition-colors"><Mail size={11} strokeWidth={2} /> help@webtopia.org</a>
           </div>
-          <p className="text-white/40 text-xs">&copy; {new Date().getFullYear()} WEB-TOPIA</p>
+          <p className="text-muted/50 text-xs">&copy; {new Date().getFullYear()} WEB-TOPIA</p>
         </div>
       </div>
     </footer>

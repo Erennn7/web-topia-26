@@ -63,7 +63,7 @@ export default function SchemesPage() {
 
         {/* Form */}
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-          className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-6 mb-8 shadow-sm">
+          className="glass premium-shadow rounded-2xl p-6 mb-8">
           <h2 className="font-bold text-foreground mb-4 flex items-center gap-2 text-sm">
             <Shield size={16} className="text-primary" strokeWidth={1.8} /> {t.schemes.enterDetails}
           </h2>
@@ -109,7 +109,7 @@ export default function SchemesPage() {
                     const SchemeIcon = LucideIcons[scheme.icon] || FileText;
                     return (
                       <motion.div key={scheme.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
-                        className="bg-white dark:bg-card-bg border border-card-border rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+                        className="glass premium-shadow rounded-2xl overflow-hidden transition-all duration-300">
                         <button onClick={() => setExpandedScheme(expandedScheme === scheme.id ? null : scheme.id)}
                           className="w-full flex items-center gap-4 p-4 text-left hover:bg-section-bg transition-colors">
                           <div className="p-2.5 rounded-xl bg-primary/10 flex-shrink-0">

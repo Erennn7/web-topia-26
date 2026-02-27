@@ -1,53 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useLang } from "@/context/LanguageContext";
 import { useGamification } from "@/context/GamificationContext";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   Heart, UtensilsCrossed, Car, Scale, DollarSign, HeartHandshake,
-  Shield, Clock, Users, Star, ArrowRight, Phone, FileText, Pill,
-  Sparkles, Trophy, Flame, Award, Zap, Search, MapPin,
+  Shield, Users, Star, ArrowRight, Phone, FileText, Pill,
+  Trophy, Flame, Zap, Search, MapPin, ChevronRight,
+  CheckCircle2, Globe, Stethoscope, HandHeart, TrendingUp,
+  Quote, Activity, Headphones, Leaf, ChevronDown, Minus,
 } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
-const fadeIn = {
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.4 },
-};
-
-const quickServices = [
-  { icon: Heart, label: "healthcare", href: "/services/healthcare-checkups", bg: "bg-green-50 dark:bg-green-900/20", iconColor: "text-green-600 dark:text-green-400" },
-  { icon: UtensilsCrossed, label: "meals", href: "/services/home-delivered-meals", bg: "bg-emerald-50 dark:bg-emerald-900/20", iconColor: "text-emerald-600 dark:text-emerald-400" },
-  { icon: Car, label: "transport", href: "/services/senior-transport", bg: "bg-teal-50 dark:bg-teal-900/20", iconColor: "text-teal-600 dark:text-teal-400" },
-  { icon: Scale, label: "legal", href: "/services/legal-aid-seniors", bg: "bg-green-50 dark:bg-green-900/20", iconColor: "text-green-600 dark:text-green-400" },
-  { icon: DollarSign, label: "financial", href: "/services/financial-assistance", bg: "bg-emerald-50 dark:bg-emerald-900/20", iconColor: "text-emerald-600 dark:text-emerald-400" },
-  { icon: HeartHandshake, label: "companion", href: "/services/companion-care", bg: "bg-teal-50 dark:bg-teal-900/20", iconColor: "text-teal-600 dark:text-teal-400" },
-  { icon: FileText, label: "schemes", href: "/schemes", bg: "bg-green-50 dark:bg-green-900/20", iconColor: "text-green-600 dark:text-green-400" },
-  { icon: Pill, label: "medicine", href: "/medicine-reminder", bg: "bg-emerald-50 dark:bg-emerald-900/20", iconColor: "text-emerald-600 dark:text-emerald-400" },
-];
-
-const features = [
-  { icon: Shield, key: "trust" },
-  { icon: Zap, key: "quick" },
-  { icon: Users, key: "community" },
-  { icon: Heart, key: "care" },
+const services = [
+  { icon: Stethoscope, label: "healthcare", href: "/services/healthcare-checkups" },
+  { icon: UtensilsCrossed, label: "meals", href: "/services/home-delivered-meals" },
+  { icon: Car, label: "transport", href: "/services/senior-transport" },
+  { icon: Scale, label: "legal", href: "/services/legal-aid-seniors" },
+  { icon: DollarSign, label: "financial", href: "/services/financial-assistance" },
+  { icon: HeartHandshake, label: "companion", href: "/services/companion-care" },
+  { icon: FileText, label: "schemes", href: "/schemes" },
+  { icon: Pill, label: "medicine", href: "/medicine-reminder" },
 ];
 
 const testimonials = [
-  { name: "Margaret, 72", text: "Found meal delivery I didn't know existed!", nameHi: "मार्गरेट, 72", textHi: "भोजन सेवा मिली जो मुझे पता नहीं थी!", nameMr: "मार्गरेट, 72", textMr: "जेवणाची सेवा मिळाली जी माहीतच नव्हती!" },
-  { name: "James, 68", text: "Companion care changed my life.", nameHi: "जेम्स, 68", textHi: "साथी सेवा ने मेरा जीवन बदल दिया।", nameMr: "जेम्स, 68", textMr: "सोबती सेवेने माझे आयुष्य बदलले." },
-  { name: "Linda, 65", text: "Found respite care for my mother.", nameHi: "लिंडा, 65", textHi: "मेरी माँ के लिए विराम सेवा मिली।", nameMr: "लिंडा, 65", textMr: "आईसाठी विश्रांती सेवा मिळाली." },
+  { name: "Margaret, 72", text: "Found meal delivery I didn't know existed. This platform is a lifesaver!", nameHi: "मार्गरेट, 72", textHi: "भोजन सेवा मिली जो मुझे पता नहीं थी!", nameMr: "मार्गरेट, 72", textMr: "जेवणाची सेवा मिळाली जी माहीतच नव्हती!", avatar: "M" },
+  { name: "James, 68", text: "Companion care changed my daily routine completely. I'm never alone now.", nameHi: "जेम्स, 68", textHi: "साथी सेवा ने मेरा जीवन बदल दिया।", nameMr: "जेम्स, 68", textMr: "सोबती सेवेने माझे आयुष्य बदलले.", avatar: "J" },
+  { name: "Linda, 65", text: "Found respite care for my mother within minutes. Incredible resource.", nameHi: "लिंडा, 65", textHi: "मेरी माँ के लिए विराम सेवा मिली।", nameMr: "लिंडा, 65", textMr: "आईसाठी विश्रांती सेवा मिळाली.", avatar: "L" },
 ];
 
 export default function HomePage() {
   const { t, lang } = useLang();
   const { addPoints, points, streak } = useGamification();
   const [visited, setVisited] = useState(false);
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 0.8], [0, 60]);
 
   useEffect(() => {
     if (!visited) {
@@ -68,155 +60,337 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-14 lg:py-20 overflow-hidden">
+      {/* ── HERO ── */}
+      <section ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4">
         <AnimatedBackground variant="hero" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <motion.span
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-1.5 bg-white dark:bg-card-bg text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-5 shadow-sm border border-card-border"
-            >
-              <Sparkles size={14} className="text-primary-light" /> {t.hero.badge}
-            </motion.span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
+        <motion.div style={{ opacity: heroOpacity, y: heroY }} className="relative z-10 max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="text-primary font-medium text-sm mb-6 flex items-center justify-center gap-2">
+              <Leaf size={14} strokeWidth={1.8} />
+              {t.hero.badge}
+            </p>
+
+            <h1 className="text-[2.5rem] sm:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.15] mb-5 tracking-[-0.02em]">
               {t.hero.title}
             </h1>
-            <p className="text-muted text-base lg:text-lg mb-7 max-w-md mx-auto">
+
+            <p className="text-muted text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
               {t.hero.subtitle}
             </p>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="mb-8"
+          >
             <SearchBar variant="hero" />
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }} className="flex flex-wrap items-center justify-center gap-3 mt-6">
-            <Link href="/services" className="bg-primary hover:bg-primary-dark text-white font-semibold px-7 py-2.5 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/20 flex items-center gap-2 text-sm">
-              {t.hero.cta} <ArrowRight size={16} />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="flex items-center justify-center gap-3"
+          >
+            <Link href="/services" className="bg-foreground dark:bg-foreground text-background dark:text-background font-medium px-7 py-3 rounded-full transition-all duration-200 hover:opacity-90 text-sm flex items-center gap-2">
+              {t.hero.cta} <ArrowRight size={15} strokeWidth={2} />
             </Link>
-            <Link href="/emergency" className="bg-white dark:bg-card-bg border border-emergency-red text-emergency-red font-semibold px-7 py-2.5 rounded-xl transition-all hover:bg-emergency-red hover:text-white flex items-center gap-2 text-sm">
-              <Phone size={16} /> {t.hero.sos}
+            <Link href="/emergency" className="border border-card-border text-foreground font-medium px-7 py-3 rounded-full transition-all duration-200 hover:border-foreground/30 text-sm flex items-center gap-2">
+              <Phone size={15} strokeWidth={2} /> {t.hero.sos}
             </Link>
           </motion.div>
-        </div>
-      </section>
+        </motion.div>
 
-      {/* Quick Access */}
-      <section className="relative py-12 lg:py-16 bg-white dark:bg-card-bg">
-        <AnimatedBackground variant="section" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeIn} className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground">{t.quickAccess.title}</h2>
-            <p className="text-muted text-sm mt-1">{t.quickAccess.subtitle}</p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          transition={{ delay: 2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
+            <ChevronDown size={18} className="text-muted" strokeWidth={1.5} />
           </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
-            {quickServices.map((s, i) => (
-              <motion.div key={s.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-                <Link href={s.href} className="flex flex-col items-center gap-3 p-5 bg-section-bg dark:bg-section-bg border border-card-border rounded-2xl hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 group">
-                  <motion.div
-                    whileHover={{ rotate: [0, -8, 8, -4, 0], scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                    className={`p-3.5 rounded-xl ${s.bg}`}
-                  >
-                    <s.icon size={26} className={s.iconColor} strokeWidth={1.8} />
-                  </motion.div>
-                  <span className="font-semibold text-foreground text-sm">{t.categories[s.label]}</span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Why Lumis */}
-      <section className="relative py-12 lg:py-16">
-        <AnimatedBackground variant="section" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 {...fadeIn} className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-8">
-            {t.benefits.title}
-          </motion.h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {features.map((f, i) => (
-              <motion.div key={f.key} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -4 }}
-                className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-5 text-center hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
-                <div className="inline-flex p-3 rounded-xl bg-primary/10 mb-3">
-                  <f.icon size={22} className="text-primary" strokeWidth={1.8} />
-                </div>
-                <h3 className="font-bold text-foreground text-sm mb-1">{t.benefits[f.key]}</h3>
-                <p className="text-muted text-xs leading-relaxed">{t.benefits[f.key + "Desc"]}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gamification */}
-      <section className="py-12 lg:py-16 bg-white dark:bg-card-bg">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeIn} className="grid sm:grid-cols-3 gap-4">
+      {/* ── TRUSTED NUMBERS ── */}
+      <section className="relative py-16 border-b border-card-border overflow-hidden">
+        {/* Subtle wave between hero and stats */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04]" viewBox="0 0 1200 200" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,100 C200,150 400,50 600,100 C800,150 1000,50 1200,100" stroke="currentColor" strokeWidth="1" className="text-primary" />
+          <path d="M0,130 C200,80 400,180 600,130 C800,80 1000,180 1200,130" stroke="currentColor" strokeWidth="1" className="text-secondary" />
+        </svg>
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-wrap justify-between items-center gap-8 text-center"
+          >
             {[
-              { icon: Trophy, value: points, label: t.gamification.points, bg: "bg-green-50 dark:bg-green-900/20", color: "text-green-600 dark:text-green-400" },
-              { icon: Flame, value: `${streak} days`, label: t.gamification.streak, bg: "bg-emerald-50 dark:bg-emerald-900/20", color: "text-emerald-600 dark:text-emerald-400" },
-              { icon: Award, value: "Level up!", label: t.gamification.badges, bg: "bg-teal-50 dark:bg-teal-900/20", color: "text-teal-600 dark:text-teal-400" },
-            ].map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                whileHover={{ scale: 1.03 }}
-                className="border border-card-border rounded-2xl p-6 text-center bg-section-bg hover:shadow-md transition-all">
-                <div className={`inline-flex p-3 rounded-xl ${item.bg} mb-2`}>
-                  <item.icon size={24} className={item.color} strokeWidth={1.8} />
-                </div>
-                <p className="text-xl font-bold text-foreground">{item.value}</p>
-                <p className="text-muted text-xs">{item.label}</p>
+              { val: "10,000+", label: "Seniors Helped" },
+              { val: "500+", label: "Services" },
+              { val: "50+", label: "Govt Schemes" },
+              { val: "24/7", label: "Support" },
+            ].map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex-1 min-w-[120px]"
+              >
+                <p className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">{s.val}</p>
+                <p className="text-muted text-sm mt-1">{s.label}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="relative py-12 lg:py-16">
-        <AnimatedBackground />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 {...fadeIn} className="text-2xl font-bold text-foreground text-center mb-6">
-            {t.testimonials.title}
-          </motion.h2>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {testimonials.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-5 hover:shadow-md transition-shadow">
-                <div className="flex gap-0.5 mb-2">
-                  {[...Array(5)].map((_, j) => <Star key={j} size={12} className="text-primary fill-primary" />)}
-                </div>
-                <p className="text-muted text-sm italic mb-3">&ldquo;{gl(item, "text")}&rdquo;</p>
-                <p className="font-semibold text-foreground text-sm">{gl(item, "name")}</p>
+      {/* ── SERVICES ── */}
+      <section className="relative py-24 lg:py-32">
+        <AnimatedBackground variant="section" />
+        <div className="relative max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12"
+          >
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">{t.quickAccess.title}</h2>
+              <p className="text-muted text-sm mt-2 max-w-md">{t.quickAccess.subtitle}</p>
+            </div>
+            <Link href="/services" className="text-primary font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all shrink-0">
+              View all <ArrowRight size={14} strokeWidth={2} />
+            </Link>
+          </motion.div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {services.map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04, duration: 0.4 }}
+              >
+                <Link
+                  href={s.href}
+                  className="group flex items-center gap-3.5 p-4 rounded-xl border border-transparent hover:border-card-border hover:bg-card-bg dark:hover:bg-card-bg transition-all duration-200"
+                >
+                  <div className="p-2.5 rounded-lg bg-warm dark:bg-warm shrink-0">
+                    <s.icon size={20} className="text-primary" strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-foreground text-sm truncate">{t.categories[s.label]}</p>
+                  </div>
+                  <ChevronRight size={14} className="text-muted/0 group-hover:text-muted transition-all shrink-0" />
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 lg:py-16 bg-white dark:bg-card-bg">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeIn} className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-8 lg:p-10 text-center text-white relative overflow-hidden">
-            <div className="absolute top-4 right-8 w-24 h-24 bg-white/5 rounded-full blur-xl" />
-            <div className="absolute bottom-4 left-8 w-32 h-32 bg-white/5 rounded-full blur-xl" />
-            <div className="relative">
-              <h2 className="text-2xl font-bold mb-2">{t.cta.title}</h2>
-              <p className="text-white/70 text-sm mb-5">{t.cta.subtitle}</p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Link href="/services" className="bg-white text-primary-dark font-semibold px-6 py-2.5 rounded-xl hover:bg-green-50 transition-colors text-sm shadow-md">
-                  {t.cta.explore}
-                </Link>
-                <Link href="/find-help" className="border-2 border-white/40 text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-white/10 transition-colors text-sm">
-                  {t.cta.findHelp}
-                </Link>
+      {/* ── HOW IT WORKS ── */}
+      <section className="relative py-24 lg:py-32 bg-warm dark:bg-warm overflow-hidden">
+        {/* Background wave lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.045]" viewBox="0 0 1200 400" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,80 C300,140 500,20 700,80 C900,140 1100,20 1200,80" stroke="currentColor" strokeWidth="1" className="text-primary" />
+          <path d="M0,200 C200,260 500,140 700,200 C900,260 1100,140 1200,200" stroke="currentColor" strokeWidth="1" className="text-accent" />
+          <path d="M0,320 C300,260 500,380 700,320 C900,260 1100,380 1200,320" stroke="currentColor" strokeWidth="1" className="text-secondary" />
+        </svg>
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">How it works</h2>
+            <p className="text-muted text-sm mt-2">Three simple steps to find the help you need.</p>
+          </motion.div>
+
+          <div className="space-y-0">
+            {[
+              { step: "01", title: "Browse", desc: "Explore curated services and government schemes designed for seniors.", icon: Search },
+              { step: "02", title: "Filter", desc: "Narrow down by your location, specific needs, and eligibility criteria.", icon: CheckCircle2 },
+              { step: "03", title: "Connect", desc: "Reach out directly to providers, helplines, and support networks.", icon: Phone },
+            ].map((item, i) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                className="flex gap-6 py-8 border-b border-card-border last:border-0 group"
+              >
+                <div className="shrink-0 w-12 text-right">
+                  <span className="text-2xl font-semibold text-primary/30">{item.step}</span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <item.icon size={18} className="text-primary" strokeWidth={1.6} />
+                    <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                  </div>
+                  <p className="text-muted text-sm leading-relaxed max-w-lg">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURES + STATS ── */}
+      <section className="relative py-24 lg:py-32">
+        <AnimatedBackground variant="section" />
+        <div className="relative max-w-5xl mx-auto px-4">
+          <div className="grid lg:grid-cols-5 gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-3"
+            >
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight mb-3">{t.benefits.title}</h2>
+              <p className="text-muted text-sm mb-10 max-w-md">Built with care, designed for simplicity.</p>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                {[
+                  { icon: Shield, key: "trust" },
+                  { icon: Zap, key: "quick" },
+                  { icon: Users, key: "community" },
+                  { icon: Heart, key: "care" },
+                ].map((f, i) => (
+                  <motion.div
+                    key={f.key}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-warm dark:bg-warm shrink-0 mt-0.5">
+                        <f.icon size={16} className="text-primary" strokeWidth={1.6} />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground text-sm mb-1">{t.benefits[f.key]}</p>
+                        <p className="text-muted text-xs leading-relaxed">{t.benefits[f.key + "Desc"]}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="lg:col-span-2"
+            >
+              <div className="bg-card-bg dark:bg-card-bg rounded-2xl border border-card-border p-6 space-y-5">
+                {[
+                  { label: t.gamification.points, value: points, icon: Trophy },
+                  { label: t.gamification.streak, value: `${streak} days`, icon: Flame },
+                  { label: "Satisfaction", value: "98%", icon: TrendingUp },
+                  { label: "Languages", value: "3", icon: Globe },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <item.icon size={16} className="text-primary" strokeWidth={1.5} />
+                      <span className="text-sm text-muted">{item.label}</span>
+                    </div>
+                    <span className="text-sm font-semibold text-foreground">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ── */}
+      <section className="relative py-24 lg:py-32 bg-section-bg dark:bg-section-bg overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.035]" viewBox="0 0 1200 400" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,120 C250,60 450,180 650,120 C850,60 1050,180 1200,120" stroke="currentColor" strokeWidth="1.5" className="text-primary" />
+          <path d="M0,280 C300,340 550,220 750,280 C950,340 1150,220 1200,280" stroke="currentColor" strokeWidth="1" className="text-accent" />
+        </svg>
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">{t.testimonials.title}</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {testimonials.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                className="bg-card-bg dark:bg-card-bg rounded-2xl p-6 border border-card-border"
+              >
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={12} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-foreground text-sm leading-relaxed mb-5">
+                  &ldquo;{gl(item, "text")}&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-warm dark:bg-warm flex items-center justify-center text-primary font-medium text-xs">
+                    {item.avatar}
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground text-sm">{gl(item, "name")}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.03]" viewBox="0 0 1200 300" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,100 C200,160 400,40 600,100 C800,160 1000,40 1200,100" stroke="currentColor" strokeWidth="1" className="text-primary" />
+          <path d="M0,200 C250,140 500,260 750,200 C1000,140 1200,260 1400,200" stroke="currentColor" strokeWidth="1" className="text-secondary" />
+        </svg>
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <HandHeart size={32} className="text-primary mx-auto mb-6" strokeWidth={1.3} />
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight mb-3">{t.cta.title}</h2>
+            <p className="text-muted text-sm mb-8 max-w-md mx-auto">{t.cta.subtitle}</p>
+            <div className="flex items-center justify-center gap-3">
+              <Link href="/services" className="bg-foreground dark:bg-foreground text-background dark:text-background font-medium px-7 py-3 rounded-full text-sm flex items-center gap-2 hover:opacity-90 transition-opacity">
+                {t.cta.explore} <ArrowRight size={15} strokeWidth={2} />
+              </Link>
+              <Link href="/find-help" className="border border-card-border text-foreground font-medium px-7 py-3 rounded-full text-sm flex items-center gap-2 hover:border-foreground/30 transition-colors">
+                <MapPin size={15} strokeWidth={2} /> {t.cta.findHelp}
+              </Link>
             </div>
           </motion.div>
         </div>

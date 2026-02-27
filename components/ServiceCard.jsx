@@ -28,7 +28,7 @@ export default function ServiceCard({ service, index = 0 }) {
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: index * 0.04 }}
       whileHover={{ y: -3 }}
-      className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-5 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 flex flex-col"
+      className="glass premium-shadow rounded-2xl p-5 transition-all duration-300 flex flex-col"
     >
       <div className="flex items-start justify-between mb-3">
         <div className="p-2.5 rounded-xl bg-primary/10">
