@@ -8,10 +8,10 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import PageTransition from "@/components/PageTransition";
 
 const contactInfo = [
-  { icon: Phone, key: "phone", value: "1-800-555-HELP", href: "tel:18005557357" },
-  { icon: Mail, key: "email", value: "help@webtopia.org", href: "mailto:help@webtopia.org" },
-  { icon: MapPin, key: "address", value: "100 Community Way, Suite 500" },
-  { icon: Clock, key: "hours", value: "Mon–Fri, 8 AM – 6 PM" },
+  { icon: Phone, key: "phone", value: "1800-111-4567", href: "tel:18001114567" },
+  { icon: Mail, key: "email", value: "help@webtopia.in", href: "mailto:help@webtopia.in" },
+  { icon: MapPin, key: "address", value: "Bandra Kurla Complex, Mumbai, MH 400051" },
+  { icon: Clock, key: "hours", value: "Mon–Sat, 9 AM – 6 PM IST" },
 ];
 
 export default function ContactPage() {

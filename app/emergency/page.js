@@ -8,12 +8,12 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import PageTransition from "@/components/PageTransition";
 
 const emergencyContacts = [
-  { title: "Emergency / 911", titleHi: "आपातकाल / 112", titleMr: "आणीबाणी / 112", number: "911", icon: Siren, color: "bg-peach border-secondary/30" },
-  { title: "Elder Helpline", titleHi: "बुजुर्ग हेल्पलाइन", titleMr: "ज्येष्ठ हेल्पलाइन", number: "1-800-555-HELP", icon: Heart, color: "bg-lavender border-purple-300/30" },
-  { title: "Poison Control", titleHi: "विष नियंत्रण", titleMr: "विष नियंत्रण", number: "1-800-222-1222", icon: AlertTriangle, color: "bg-warm border-accent/30" },
-  { title: "Crisis Line / 988", titleHi: "संकट हेल्पलाइन / 988", titleMr: "संकट हेल्पलाइन / 988", number: "988", icon: Phone, color: "bg-sky border-info/30" },
-  { title: "Police (Non-Emergency)", titleHi: "पुलिस (गैर-आपातकाल)", titleMr: "पोलीस (बिगर-आणीबाणी)", number: "311", icon: Shield, color: "bg-mint border-success/30" },
-  { title: "Lumis 24/7", titleHi: "Lumis 24/7", titleMr: "Lumis 24/7", number: "1-800-555-CARE", icon: Clock, color: "bg-sky border-info/30" },
+  { title: "Emergency / 112", titleHi: "आपातकाल / 112", titleMr: "आणीबाणी / 112", number: "112", icon: Siren, color: "bg-peach border-secondary/30" },
+  { title: "Ambulance / 108", titleHi: "एम्बुलेंस / 108", titleMr: "रुग्णवाहिका / 108", number: "108", icon: Heart, color: "bg-lavender border-purple-300/30" },
+  { title: "Elder Helpline / 14567", titleHi: "बुजुर्ग हेल्पलाइन / 14567", titleMr: "ज्येष्ठ हेल्पलाइन / 14567", number: "14567", icon: Phone, color: "bg-warm border-accent/30" },
+  { title: "Women Helpline / 1091", titleHi: "महिला हेल्पलाइन / 1091", titleMr: "महिला हेल्पलाइन / 1091", number: "1091", icon: Shield, color: "bg-sky border-info/30" },
+  { title: "Police / 100", titleHi: "पुलिस / 100", titleMr: "पोलीस / 100", number: "100", icon: Shield, color: "bg-mint border-success/30" },
+  { title: "Health Helpline / 104", titleHi: "स्वास्थ्य हेल्पलाइन / 104", titleMr: "आरोग्य हेल्पलाइन / 104", number: "104", icon: Clock, color: "bg-sky border-info/30" },
 ];
 
 const safetyTips = [
@@ -39,7 +39,7 @@ export default function EmergencyPage() {
             <AlertTriangle size={40} strokeWidth={1.8} className="text-white mx-auto mb-4" />
             <h1 className="text-2xl lg:text-4xl font-bold text-white mb-2">{t.emergency.title}</h1>
             <p className="text-white/80 text-sm mb-6">{t.emergency.subtitle}</p>
-            <a href="tel:911" className="inline-flex items-center gap-2 bg-white text-emergency-red font-bold px-8 py-3 rounded-xl text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <a href="tel:112" className="inline-flex items-center gap-2 bg-white text-emergency-red font-bold px-8 py-3 rounded-xl text-lg hover:bg-gray-100 transition-colors shadow-lg">
               <Phone size={22} strokeWidth={1.8} className="animate-pulse" /> {t.emergency.call911}
             </a>
           </motion.div>
@@ -68,7 +68,7 @@ export default function EmergencyPage() {
       {/* SOS */}
       <section className="py-10 bg-emergency-bg">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.a href="tel:18005557357" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+          <motion.a href="tel:112" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 bg-emergency-red text-white font-bold px-10 py-4 rounded-full text-lg shadow-lg">
             <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" /><span className="relative inline-flex rounded-full h-3 w-3 bg-white" /></span>
             {t.emergency.sos}

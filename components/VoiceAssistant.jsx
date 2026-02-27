@@ -19,7 +19,7 @@ const COMMANDS = [
   { keywords: ["hospital", "hospitals", "nearby hospital", "nearby hospitals", "clinic", "medical facility"], path: "/nearby-hospitals", label: "Nearby Hospitals" },
   { keywords: ["resources", "resource", "guides", "articles", "tips"], path: "/resources", label: "Resources" },
   { keywords: ["find help", "near me", "nearby", "location", "local", "help near"], path: "/find-help", label: "Find Help" },
-  { keywords: ["emergency", "sos", "urgent", "ambulance", "police", "911", "help"], path: "/emergency", label: "Emergency" },
+  { keywords: ["emergency", "sos", "urgent", "ambulance", "police", "112", "108", "help"], path: "/emergency", label: "Emergency" },
   { keywords: ["about", "about us", "who are you", "information"], path: "/about", label: "About" },
   { keywords: ["contact", "contact us", "reach", "email", "call us", "message"], path: "/contact", label: "Contact" },
 ];

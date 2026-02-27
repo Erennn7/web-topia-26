@@ -23,10 +23,10 @@ const values = [
 ];
 
 const team = [
-  { name: "Dr. Sarah Mitchell", role: "Founder", roleHi: "संस्थापक", roleMr: "संस्थापक", initial: "S" },
-  { name: "James Ortega", role: "Outreach", roleHi: "आउटरीच", roleMr: "आउटरीच", initial: "J" },
+  { name: "Dr. Anjali Deshmukh", role: "Founder", roleHi: "संस्थापक", roleMr: "संस्थापक", initial: "A" },
+  { name: "Rajesh Patil", role: "Outreach", roleHi: "आउटरीच", roleMr: "आउटरीच", initial: "R" },
   { name: "Priya Sharma", role: "Design", roleHi: "डिज़ाइन", roleMr: "डिझाइन", initial: "P" },
-  { name: "Michael Chen", role: "Technology", roleHi: "तकनीक", roleMr: "तंत्रज्ञान", initial: "M" },
+  { name: "Vikram Joshi", role: "Technology", roleHi: "तकनीक", roleMr: "तंत्रज्ञान", initial: "V" },
 ];
 
 export default function AboutPage() {

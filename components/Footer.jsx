@@ -53,8 +53,8 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-6 border-t border-card-border flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-5 text-xs text-muted">
-            <a href="tel:1-800-555-HELP" className="flex items-center gap-1.5 hover:text-foreground transition-colors"><Phone size={11} strokeWidth={2} /> 1-800-555-HELP</a>
-            <a href="mailto:help@webtopia.org" className="flex items-center gap-1.5 hover:text-foreground transition-colors"><Mail size={11} strokeWidth={2} /> help@webtopia.org</a>
+            <a href="tel:18001114567" className="flex items-center gap-1.5 hover:text-foreground transition-colors"><Phone size={11} strokeWidth={2} /> 1800-111-4567</a>
+            <a href="mailto:help@webtopia.in" className="flex items-center gap-1.5 hover:text-foreground transition-colors"><Mail size={11} strokeWidth={2} /> help@webtopia.in</a>
           </div>
           <p className="text-muted/50 text-xs">&copy; {new Date().getFullYear()} WEB-TOPIA</p>
         </div>

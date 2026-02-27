@@ -9,7 +9,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import PageTransition from "@/components/PageTransition";
 import services from "@/data/services.json";
 
-const locations = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX", "Phoenix, AZ", "Mumbai, MH", "Pune, MH", "Delhi, DL", "Bangalore, KA", "Chennai, TN"];
+const locations = ["Mumbai, MH", "Pune, MH", "Delhi, DL", "Bangalore, KA", "Chennai, TN", "Hyderabad, TS", "Kolkata, WB", "Ahmedabad, GJ", "Jaipur, RJ", "Lucknow, UP", "Nagpur, MH", "Nashik, MH"];
 
 function getDistance() { return (Math.random() * 5 + 0.5).toFixed(1); }
 
@@ -84,7 +84,7 @@ export default function FindHelpPage() {
                   className="bg-white dark:bg-card-bg border border-card-border rounded-2xl p-4 hover:shadow-lg hover:shadow-primary/10 transition-shadow">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{s.category}</span>
-                    <span className="text-[10px] text-muted flex items-center gap-0.5"><MapPin size={10} strokeWidth={1.8} /> {s.distance} mi</span>
+                    <span className="text-[10px] text-muted flex items-center gap-0.5"><MapPin size={10} strokeWidth={1.8} /> {s.distance} km</span>
                   </div>
                   <h3 className="font-bold text-foreground text-sm mb-1">{s.title}</h3>
                   <div className="flex items-center gap-3 text-[10px] text-muted mb-2">

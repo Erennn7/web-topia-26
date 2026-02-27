@@ -8,7 +8,7 @@
     "description": "Comprehensive health checkups designed specifically for seniors aged 60 and above. Regular screenings for blood pressure, diabetes, cholesterol, vision, and hearing.",
     "eligibility": [
       "Adults aged 60 years and above",
-      "Valid government-issued ID required",
+      "Valid Aadhaar or government-issued ID required",
       "Available to all income levels",
       "No prior enrollment needed for basic checkups"
     ],
@@ -20,22 +20,22 @@
       "Digital health records access"
     ],
     "steps": [
-      "Call the helpline or visit the nearest community health center",
-      "Bring your ID and any existing medical records",
+      "Call the helpline or visit the nearest PHC / community health center",
+      "Bring your Aadhaar and any existing medical records",
       "Complete a brief health questionnaire",
       "Get your checkup scheduled within 48 hours",
       "Receive your results and follow-up plan"
     ],
     "contact": {
-      "phone": "1-800-555-CARE",
-      "email": "health@webtopia.org",
-      "address": "123 Wellness Blvd, Suite 100",
-      "hours": "Mon–Fri, 8:00 AM – 6:00 PM"
+      "phone": "1800-111-4567",
+      "email": "health@webtopia.in",
+      "address": "Govt. Community Health Centre, Andheri West, Mumbai 400058",
+      "hours": "Mon–Sat, 9:00 AM – 5:00 PM"
     },
     "faqs": [
       {
         "question": "Is there a cost for the health checkup?",
-        "answer": "Basic annual checkups are free for all seniors aged 60+. Specialist referrals may have a reduced copay depending on your insurance."
+        "answer": "Basic annual checkups are free for all seniors aged 60+ at government health centers. Private referrals may have a nominal fee."
       },
       {
         "question": "Can I get a home visit instead?",
@@ -43,7 +43,7 @@
       },
       {
         "question": "What should I bring to my appointment?",
-        "answer": "Please bring a valid ID, insurance card (if applicable), list of current medications, and any recent medical records."
+        "answer": "Please bring your Aadhaar card, any health insurance card (ABHA, Ayushman Bharat), list of current medications, and recent medical records."
       }
     ]
   },
@@ -75,15 +75,15 @@
       "Develop a personalized support plan"
     ],
     "contact": {
-      "phone": "1-800-555-MIND",
-      "email": "mentalhealth@webtopia.org",
-      "address": "456 Serenity Lane, Suite 200",
-      "hours": "Mon–Sat, 9:00 AM – 8:00 PM"
+      "phone": "1800-599-0019",
+      "email": "mentalhealth@webtopia.in",
+      "address": "NIMHANS Extension Centre, Koramangala, Bengaluru 560034",
+      "hours": "Mon–Sat, 9:00 AM – 7:00 PM"
     },
     "faqs": [
       {
         "question": "Is my information kept confidential?",
-        "answer": "Absolutely. All sessions are confidential and comply with healthcare privacy regulations."
+        "answer": "Absolutely. All sessions are confidential and comply with Indian healthcare privacy regulations."
       },
       {
         "question": "Can I attend group sessions?",
@@ -119,15 +119,15 @@
       "Adjust your plan anytime by calling us"
     ],
     "contact": {
-      "phone": "1-800-555-MEAL",
-      "email": "meals@webtopia.org",
-      "address": "789 Nourish Ave",
-      "hours": "Mon–Fri, 7:00 AM – 4:00 PM"
+      "phone": "1800-200-3344",
+      "email": "meals@webtopia.in",
+      "address": "Akshaya Patra Foundation, Rajajinagar, Bengaluru 560010",
+      "hours": "Mon–Sat, 8:00 AM – 4:00 PM"
     },
     "faqs": [
       {
         "question": "Can I choose my meals?",
-        "answer": "Yes, you can select from our weekly menu. We accommodate dietary restrictions including diabetic, low-sodium, vegetarian, and more."
+        "answer": "Yes, you can select from our weekly menu. We accommodate dietary restrictions including diabetic, low-sodium, vegetarian, Jain, and more."
       },
       {
         "question": "Is there a delivery fee?",
@@ -141,7 +141,7 @@
     "category": "Meals",
     "type": "Social",
     "icon": "Users",
-    "description": "Enjoy nutritious meals in a friendly social setting at local community centers. A great way to stay connected while eating well.",
+    "description": "Enjoy nutritious meals in a friendly social setting at local community centers and old age homes. A great way to stay connected while eating well.",
     "eligibility": [
       "Seniors aged 60 and above",
       "Spouses of eligible seniors (any age)",
@@ -153,7 +153,7 @@
       "Social interaction and companionship",
       "Nutrition education workshops",
       "Transportation assistance to dining sites",
-      "Special holiday meals and events"
+      "Special festival meals and events"
     ],
     "steps": [
       "Find your nearest community dining site",
@@ -163,10 +163,10 @@
       "Ask about additional programs available"
     ],
     "contact": {
-      "phone": "1-800-555-DINE",
-      "email": "dining@webtopia.org",
-      "address": "Multiple locations citywide",
-      "hours": "Lunch served Mon–Fri, 11:30 AM – 1:00 PM"
+      "phone": "1800-200-5577",
+      "email": "dining@webtopia.in",
+      "address": "Multiple locations across major Indian cities",
+      "hours": "Lunch served Mon–Sat, 12:00 PM – 2:00 PM"
     },
     "faqs": [
       {
@@ -175,7 +175,7 @@
       },
       {
         "question": "Is transportation available?",
-        "answer": "Yes, many locations offer free shuttle service. Call your local dining site for details."
+        "answer": "Yes, many locations offer free auto or van service. Call your local dining site for details."
       }
     ]
   },
@@ -207,10 +207,10 @@
       "Pay the flat fare to the driver"
     ],
     "contact": {
-      "phone": "1-800-555-RIDE",
-      "email": "transport@webtopia.org",
-      "address": "321 Transit Way",
-      "hours": "Mon–Sat, 6:00 AM – 8:00 PM"
+      "phone": "1800-102-8747",
+      "email": "transport@webtopia.in",
+      "address": "Senior Seva Transport Hub, Shivaji Nagar, Pune 411005",
+      "hours": "Mon–Sat, 7:00 AM – 8:00 PM"
     },
     "faqs": [
       {
@@ -229,7 +229,7 @@
     "category": "Legal Aid",
     "type": "Legal",
     "icon": "Scale",
-    "description": "Free and low-cost legal assistance for seniors on matters including wills, power of attorney, housing disputes, elder abuse, benefits claims, and consumer protection.",
+    "description": "Free and low-cost legal assistance for seniors on matters including wills, power of attorney, property disputes, elder abuse, pension claims, and consumer protection.",
     "eligibility": [
       "Seniors aged 60 and above",
       "Priority given to low-income seniors",
@@ -238,32 +238,32 @@
     ],
     "benefits": [
       "Free legal consultations",
-      "Help with wills and advance directives",
-      "Elder abuse protection",
-      "Benefits and insurance claim assistance",
-      "Housing rights advocacy"
+      "Help with wills and power of attorney",
+      "Elder abuse protection under Maintenance and Welfare of Parents and Senior Citizens Act",
+      "Pension and insurance claim assistance",
+      "Property rights advocacy"
     ],
     "steps": [
-      "Call the Legal Aid Hotline",
+      "Call the Legal Aid Helpline",
       "Describe your legal concern",
-      "Get matched with a volunteer attorney",
+      "Get matched with a panel advocate",
       "Attend your consultation (in-person or phone)",
       "Receive follow-up support as needed"
     ],
     "contact": {
-      "phone": "1-800-555-LAWS",
-      "email": "legal@webtopia.org",
-      "address": "555 Justice Blvd, Floor 3",
-      "hours": "Mon–Fri, 9:00 AM – 5:00 PM"
+      "phone": "1516",
+      "email": "legal@webtopia.in",
+      "address": "District Legal Services Authority, Dindoshi, Mumbai 400097",
+      "hours": "Mon–Fri, 10:00 AM – 5:00 PM"
     },
     "faqs": [
       {
         "question": "Is there a cost for legal help?",
-        "answer": "Initial consultations are free. Extended services are available on a sliding scale based on income."
+        "answer": "Initial consultations are free under NALSA. Extended services are available through Legal Services Authorities at no cost for eligible seniors."
       },
       {
         "question": "Can you help with elder abuse cases?",
-        "answer": "Yes. We provide legal advocacy and connect you with protective services immediately."
+        "answer": "Yes. We provide legal advocacy under the Senior Citizens Act and connect you with protective services immediately."
       }
     ]
   },
@@ -273,41 +273,41 @@
     "category": "Financial Support",
     "type": "Financial",
     "icon": "DollarSign",
-    "description": "Programs to help seniors manage finances, access benefits, apply for assistance with utilities, rent, medications, and other essential expenses.",
+    "description": "Programs to help seniors manage finances, access pension benefits, apply for assistance with utilities, rent, medications, and other essential expenses.",
     "eligibility": [
       "Seniors aged 60 and above",
       "Income-based qualifications may apply",
-      "Must provide proof of residence",
-      "U.S. citizens or legal residents"
+      "Must provide Aadhaar and proof of residence",
+      "Indian citizens"
     ],
     "benefits": [
-      "Utility bill assistance",
-      "Medication cost programs",
-      "Rent and housing subsidies",
-      "Tax preparation assistance",
-      "Benefits enrollment help (Medicare, Medicaid, SSI)"
+      "Old Age Pension (Indira Gandhi National Old Age Pension Scheme)",
+      "Medication cost programs under Jan Aushadhi",
+      "LPG subsidy and utility assistance",
+      "Free rail and bus travel concessions",
+      "Benefits enrollment help (Ayushman Bharat, PM-JAY)"
     ],
     "steps": [
       "Call or visit our Financial Assistance office",
-      "Bring income documentation and ID",
+      "Bring income documentation, Aadhaar, and BPL card if applicable",
       "Complete a benefits screening",
-      "Get connected to eligible programs",
-      "Receive ongoing case management support"
+      "Get connected to eligible government schemes",
+      "Receive ongoing support for applications"
     ],
     "contact": {
-      "phone": "1-800-555-FUND",
-      "email": "finance@webtopia.org",
-      "address": "678 Benefit St, Suite 400",
-      "hours": "Mon–Fri, 8:30 AM – 4:30 PM"
+      "phone": "1800-111-555",
+      "email": "finance@webtopia.in",
+      "address": "Social Welfare Office, CGO Complex, New Delhi 110003",
+      "hours": "Mon–Fri, 9:30 AM – 5:00 PM"
     },
     "faqs": [
       {
         "question": "What documents do I need?",
-        "answer": "Please bring a valid ID, proof of income (Social Security statement, pension, etc.), proof of residence, and any current bills you need help with."
+        "answer": "Please bring your Aadhaar card, proof of income, bank passbook, BPL card (if applicable), and any current bills you need help with."
       },
       {
-        "question": "Can you help me enroll in Medicare?",
-        "answer": "Yes! Our benefits counselors are certified to help with Medicare, Medicaid, and other program enrollments."
+        "question": "Can you help me enroll in Ayushman Bharat?",
+        "answer": "Yes! Our benefits counselors help with Ayushman Bharat (PM-JAY), IGNOAPS, and other government scheme enrollments."
       }
     ]
   },
@@ -339,10 +339,10 @@
       "Provide feedback to improve your experience"
     ],
     "contact": {
-      "phone": "1-800-555-PALS",
-      "email": "companions@webtopia.org",
-      "address": "890 Friendship Circle",
-      "hours": "Mon–Fri, 9:00 AM – 5:00 PM"
+      "phone": "1800-200-1234",
+      "email": "companions@webtopia.in",
+      "address": "HelpAge India, Qutub Institutional Area, New Delhi 110016",
+      "hours": "Mon–Sat, 9:00 AM – 5:00 PM"
     },
     "faqs": [
       {
@@ -372,7 +372,7 @@
       "Personalized care plans",
       "Certified home health aides",
       "Medication management and reminders",
-      "Physical therapy at home",
+      "Physiotherapy at home",
       "24/7 emergency support line"
     ],
     "steps": [
@@ -383,15 +383,15 @@
       "Regular reviews and plan adjustments"
     ],
     "contact": {
-      "phone": "1-800-555-HOME",
-      "email": "homecare@webtopia.org",
-      "address": "234 Care Lane",
+      "phone": "1800-102-4400",
+      "email": "homecare@webtopia.in",
+      "address": "Portea Medical, HSR Layout, Bengaluru 560102",
       "hours": "24/7 support line available"
     },
     "faqs": [
       {
         "question": "Does insurance cover in-home care?",
-        "answer": "Many insurance plans, Medicare, and Medicaid cover certain in-home services. We help you understand your coverage."
+        "answer": "Many health insurance plans cover certain in-home services. Ayushman Bharat and some state schemes also provide coverage. We help you understand your options."
       },
       {
         "question": "Can I change my caregiver?",
@@ -409,11 +409,11 @@
     "eligibility": [
       "Seniors aged 60 and above",
       "Doctor's prescription for medical devices",
-      "Income-based assistance available",
+      "Income-based assistance available under ADIP scheme",
       "Device training included"
     ],
     "benefits": [
-      "Free or reduced-cost devices",
+      "Free or subsidized devices under ADIP scheme",
       "Walkers, wheelchairs, and canes",
       "Hearing aids and amplifiers",
       "Magnifiers and large-print tools",
@@ -421,21 +421,21 @@
     ],
     "steps": [
       "Get a referral from your doctor if needed",
-      "Contact our Assistive Devices team",
+      "Contact our Assistive Devices team or nearest ALIMCO center",
       "Complete a needs assessment",
       "Receive your device with training",
       "Follow up for adjustments or replacements"
     ],
     "contact": {
-      "phone": "1-800-555-AIDS",
-      "email": "devices@webtopia.org",
-      "address": "567 Independence Way",
-      "hours": "Mon–Fri, 9:00 AM – 4:00 PM"
+      "phone": "1800-180-5129",
+      "email": "devices@webtopia.in",
+      "address": "ALIMCO, GT Road, Kanpur 209217",
+      "hours": "Mon–Fri, 10:00 AM – 5:00 PM"
     },
     "faqs": [
       {
         "question": "Are devices free?",
-        "answer": "Many devices are available at no cost or reduced cost based on income. Insurance may also cover prescribed devices."
+        "answer": "Many devices are available free under the ADIP (Assistance to Disabled Persons) scheme for eligible seniors. Private insurance may also cover prescribed devices."
       },
       {
         "question": "Do you offer training on how to use devices?",
@@ -454,14 +454,14 @@
       "Seniors aged 60 and above",
       "Living alone or at risk of falls",
       "No income requirements for basic devices",
-      "Available nationwide"
+      "Available across India"
     ],
     "benefits": [
       "24/7 emergency monitoring",
       "One-button help activation",
       "Automatic fall detection option",
       "GPS tracking for mobile devices",
-      "Direct connection to emergency services"
+      "Direct connection to 112 emergency services"
     ],
     "steps": [
       "Call to request a personal emergency device",
@@ -471,19 +471,19 @@
       "Wear it daily for peace of mind"
     ],
     "contact": {
-      "phone": "1-800-555-HELP",
-      "email": "emergency@webtopia.org",
-      "address": "901 Safety Drive",
+      "phone": "1800-111-4567",
+      "email": "emergency@webtopia.in",
+      "address": "SeniorWatch India, Bandra East, Mumbai 400051",
       "hours": "24/7 monitoring"
     },
     "faqs": [
       {
         "question": "How quickly will help arrive?",
-        "answer": "When you press the button, our monitoring center responds within 30 seconds and dispatches help immediately."
+        "answer": "When you press the button, our monitoring center responds within 30 seconds and dispatches help via 112/108 immediately."
       },
       {
         "question": "Does it work outside my home?",
-        "answer": "Our mobile devices with GPS work anywhere with cellular coverage."
+        "answer": "Our mobile devices with GPS work anywhere with cellular coverage across India."
       }
     ]
   },
@@ -515,10 +515,10 @@
       "Join a caregiver support group"
     ],
     "contact": {
-      "phone": "1-800-555-REST",
-      "email": "caregivers@webtopia.org",
-      "address": "345 Support Way",
-      "hours": "Mon–Fri, 8:00 AM – 6:00 PM"
+      "phone": "1800-180-1253",
+      "email": "caregivers@webtopia.in",
+      "address": "HelpAge India, Saket, New Delhi 110017",
+      "hours": "Mon–Sat, 9:00 AM – 6:00 PM"
     },
     "faqs": [
       {
