@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageSquare } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 
 const contactInfo = [
   { icon: Phone, key: "phone", value: "1-800-555-HELP", href: "tel:18005557357" },
@@ -22,7 +23,7 @@ export default function ContactPage() {
   const handleChange = (e) => setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
 
   return (
-    <div className="min-h-screen py-8 lg:py-12 relative">
+    <PageTransition className="min-h-screen py-8 lg:py-12 relative">
       <AnimatedBackground />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
@@ -86,7 +87,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
 

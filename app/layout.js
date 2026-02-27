@@ -7,6 +7,7 @@ import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import ChatbotMock from "@/components/ChatbotMock";
 import GamificationBar from "@/components/GamificationBar";
 import PointsPopup from "@/components/PointsPopup";
+import VoiceAssistant from "@/components/VoiceAssistant";
 import Providers from "@/components/Providers";
 
 const poppins = Poppins({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
             <Footer />
             <AccessibilityToolbar />
             <ChatbotMock />
+            <VoiceAssistant />
             <PointsPopup />
           </Providers>
         </ThemeProvider>

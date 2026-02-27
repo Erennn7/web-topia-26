@@ -67,7 +67,7 @@ export default function ChatbotMock() {
   };
 
   return (
-    <div className="fixed bottom-5 left-5 z-50">
+    <div className="fixed bottom-5 right-5 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div initial={{ opacity: 0, y: 16, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 16, scale: 0.95 }}

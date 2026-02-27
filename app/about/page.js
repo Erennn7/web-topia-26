@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import { Heart, Users, Target, Eye, Award, Handshake, CheckCircle } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 
 const fadeIn = { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.4 } };
 
@@ -33,7 +34,7 @@ export default function AboutPage() {
   const gl = (item, field) => lang === "hi" ? item[field + "Hi"] || item[field] : lang === "mr" ? item[field + "Mr"] || item[field] : item[field];
 
   return (
-    <div className="min-h-screen relative">
+    <PageTransition className="min-h-screen relative">
       <AnimatedBackground />
       {/* Hero */}
       <section className="py-12 lg:py-16 bg-warm relative">
@@ -116,6 +117,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </div>
+    </PageTransition>
   );
 }

@@ -6,6 +6,7 @@ import { useLang } from "@/context/LanguageContext";
 import { MapPin, Search, Phone, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 import services from "@/data/services.json";
 
 const locations = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX", "Phoenix, AZ", "Mumbai, MH", "Pune, MH", "Delhi, DL", "Bangalore, KA", "Chennai, TN"];
@@ -26,7 +27,7 @@ export default function FindHelpPage() {
   const handleSearch = (e) => { e.preventDefault(); setHasSearched(true); };
 
   return (
-    <div className="min-h-screen py-8 lg:py-10 relative">
+    <PageTransition className="min-h-screen py-8 lg:py-10 relative">
       <AnimatedBackground />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
@@ -98,6 +99,6 @@ export default function FindHelpPage() {
           </div>
         )}
       </div>
-    </div>
+    </PageTransition>
   );
 }

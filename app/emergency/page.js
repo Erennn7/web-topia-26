@@ -5,6 +5,7 @@ import { useLang } from "@/context/LanguageContext";
 import { Phone, AlertTriangle, Shield, Siren, Heart, Clock, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 
 const emergencyContacts = [
   { title: "Emergency / 911", titleHi: "आपातकाल / 112", titleMr: "आणीबाणी / 112", number: "911", icon: Siren, color: "bg-peach border-secondary/30" },
@@ -29,7 +30,7 @@ export default function EmergencyPage() {
   const gl = (item, field) => lang === "hi" ? item[field + "Hi"] || item[field] : lang === "mr" ? item[field + "Mr"] || item[field] : item[field];
 
   return (
-    <div className="min-h-screen relative">
+    <PageTransition className="min-h-screen relative">
       <AnimatedBackground />
       {/* Hero */}
       <section className="bg-emergency-red py-10 lg:py-14 relative">
@@ -105,6 +106,6 @@ export default function EmergencyPage() {
           </div>
         </div>
       </section>
-    </div>
+    </PageTransition>
   );
 }

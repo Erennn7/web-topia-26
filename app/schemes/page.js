@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import schemes from "@/data/schemes.json";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 
 const states = ["Maharashtra", "Delhi", "Karnataka", "Tamil Nadu", "Uttar Pradesh", "Gujarat", "Rajasthan", "West Bengal"];
 
@@ -50,7 +51,7 @@ export default function SchemesPage() {
   const handleChange = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
   return (
-    <div className="min-h-screen py-8 lg:py-12 relative">
+    <PageTransition className="min-h-screen py-8 lg:py-12 relative">
       <AnimatedBackground />
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
@@ -168,7 +169,7 @@ export default function SchemesPage() {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </PageTransition>
   );
 }
 

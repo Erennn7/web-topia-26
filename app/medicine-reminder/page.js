@@ -9,6 +9,7 @@ import {
   Star, Calendar, Target, Zap,
 } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 
 const defaultMedicines = [
   { id: "1", name: "Metformin", dosage: "500mg", time: "08:00", frequency: "daily", color: "bg-primary/10" },
@@ -77,7 +78,7 @@ export default function MedicineReminderPage() {
   const freqLabel = (f) => ({ daily: t.medicine.daily, "twice-daily": t.medicine.twiceDaily, weekly: t.medicine.weekly }[f] || f);
 
   return (
-    <div className="min-h-screen py-8 lg:py-12 relative">
+    <PageTransition className="min-h-screen py-8 lg:py-12 relative">
       <AnimatedBackground />
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-6">
@@ -245,6 +246,6 @@ export default function MedicineReminderPage() {
           </div>
         </motion.div>
       </div>
-    </div>
+    </PageTransition>
   );
 }

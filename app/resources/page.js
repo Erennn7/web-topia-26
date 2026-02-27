@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import { ChevronDown, FileText, ShieldCheck, ShieldAlert, Apple, Heart, Users, Dumbbell, Home } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import PageTransition from "@/components/PageTransition";
 import resources from "@/data/resources.json";
 
 const iconMap = { FileText, ShieldCheck, ShieldAlert, Apple, Heart, Users, Dumbbell, Home };
@@ -20,7 +21,7 @@ export default function ResourcesPage() {
   const filtered = activeTab === "All" ? resources : resources.filter((r) => r.category === activeTab);
 
   return (
-    <div className="min-h-screen py-8 lg:py-10 relative">
+    <PageTransition className="min-h-screen py-8 lg:py-10 relative">
       <AnimatedBackground />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
@@ -41,7 +42,7 @@ export default function ResourcesPage() {
           {filtered.map((r, i) => <ResourceCard key={r.id} resource={r} index={i} />)}
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
 
