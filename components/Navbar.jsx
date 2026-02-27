@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import {
   Menu, X, Home, Stethoscope, BookOpen, MapPin,
-  AlertTriangle, Info, Phone, FileText, Pill, Leaf,
+  AlertTriangle, Info, Phone, FileText, Pill, Leaf, Smartphone,
 } from "lucide-react";
 
 const langFlags = { en: "EN", hi: "हि", mr: "म" };
@@ -27,6 +27,7 @@ export default function Navbar() {
     { href: "/services", label: t.nav.services, icon: Stethoscope },
     { href: "/schemes", label: t.nav.schemes, icon: FileText },
     { href: "/medicine-reminder", label: t.nav.medicine, icon: Pill },
+    { href: "/digital-learning", label: t.nav.digitalLearning || "Learn", icon: Smartphone },
     { href: "/resources", label: t.nav.resources, icon: BookOpen },
     { href: "/find-help", label: t.nav.findHelp, icon: MapPin },
     { href: "/about", label: t.nav.about, icon: Info },

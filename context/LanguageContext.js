@@ -7,7 +7,7 @@ const LanguageContext = createContext();
 const translations = {
   en: {
     lang: "English",
-    nav: { home: "Home", services: "Services", resources: "Resources", findHelp: "Find Help", emergency: "Emergency", about: "About", contact: "Contact", schemes: "Schemes", medicine: "Medicine" },
+    nav: { home: "Home", services: "Services", resources: "Resources", findHelp: "Find Help", emergency: "Emergency", about: "About", contact: "Contact", schemes: "Schemes", medicine: "Medicine", digitalLearning: "Learn" },
     hero: { badge: "Helping Seniors Live Better", title: "Senior Services & Support", subtitle: "Find healthcare, meals, transport & more", search: "Search services...", location: "Your location", cta: "Browse Services", sos: "Emergency Help" },
     quickAccess: { title: "Quick Access", subtitle: "Tap a card to explore" },
     categories: { healthcare: "Healthcare", meals: "Meals", transport: "Transport", legal: "Legal Aid", financial: "Financial", companion: "Companion", schemes: "Gov Schemes", medicine: "Medicine" },
@@ -25,11 +25,12 @@ const translations = {
     medicine: { title: "Medicine Reminder", subtitle: "Never miss a dose", addMed: "Add Medicine", name_: "Medicine Name", dosage: "Dosage", time: "Time", frequency: "Frequency", daily: "Daily", twiceDaily: "Twice Daily", weekly: "Weekly", add: "Add", taken: "Taken", skip: "Skip", streak: "Streak", points: "Points" },
     gamification: { level: "Level", points: "Points", streak: "Day Streak", badges: "Badges", tasks: "Complete tasks to earn points" },
     reading: { normal: "Normal", comfortable: "Comfortable", focus: "Focus" },
+    digitalLearning: { badge: "Digital Learning", title: "Learn Digital Payments", subtitle: "Practice using WhatsApp and Google Pay safely with our interactive simulator", whatsappTitle: "WhatsApp Payments", whatsappDesc: "Learn to send payments through WhatsApp chat to your contacts safely.", gpayTitle: "Google Pay", gpayDesc: "Learn to send money, check balance, and view transaction history using Google Pay.", startLearning: "Start Learning", featureStep: "Step-by-Step Guide", featureStepDesc: "Easy guided instructions", featureVoice: "Voice Instructions", featureVoiceDesc: "Listen to every step", featureSafe: "100% Safe", featureSafeDesc: "No real money involved", safetyNote: "This is a safe simulation. No real money or data is used." },
     common: { phone: "Phone", email: "Email", address: "Address", hours: "Hours", viewAll: "View All", close: "Close", save: "Save", cancel: "Cancel", submit: "Submit", loading: "Loading..." },
   },
   hi: {
     lang: "हिन्दी",
-    nav: { home: "होम", services: "सेवाएं", resources: "संसाधन", findHelp: "मदद खोजें", emergency: "आपातकाल", about: "हमारे बारे में", contact: "संपर्क", schemes: "योजनाएं", medicine: "दवाई" },
+    nav: { home: "होम", services: "सेवाएं", resources: "संसाधन", findHelp: "मदद खोजें", emergency: "आपातकाल", about: "हमारे बारे में", contact: "संपर्क", schemes: "योजनाएं", medicine: "दवाई", digitalLearning: "सीखें" },
     hero: { badge: "बुजुर्गों की बेहतर जिंदगी", title: "वरिष्ठ सेवाएं और सहायता", subtitle: "स्वास्थ्य, भोजन, परिवहन और अधिक", search: "सेवाएं खोजें...", location: "आपका स्थान", cta: "सेवाएं देखें", sos: "आपातकालीन मदद" },
     quickAccess: { title: "त्वरित पहुंच", subtitle: "कार्ड पर टैप करें" },
     categories: { healthcare: "स्वास्थ्य", meals: "भोजन", transport: "परिवहन", legal: "कानूनी सहायता", financial: "वित्तीय", companion: "साथी सेवा", schemes: "सरकारी योजना", medicine: "दवाई" },
@@ -47,11 +48,12 @@ const translations = {
     medicine: { title: "दवाई रिमाइंडर", subtitle: "कोई खुराक न छूटे", addMed: "दवाई जोड़ें", name_: "दवाई का नाम", dosage: "खुराक", time: "समय", frequency: "कितनी बार", daily: "रोज़", twiceDaily: "दिन में दो बार", weekly: "साप्ताहिक", add: "जोड़ें", taken: "ली गई", skip: "छोड़ें", streak: "स्ट्रीक", points: "अंक" },
     gamification: { level: "स्तर", points: "अंक", streak: "दिन स्ट्रीक", badges: "बैज", tasks: "अंक कमाने के लिए कार्य पूरे करें" },
     reading: { normal: "सामान्य", comfortable: "आरामदायक", focus: "फोकस" },
+    digitalLearning: { badge: "डिजिटल शिक्षा", title: "डिजिटल भुगतान सीखें", subtitle: "WhatsApp और Google Pay का सुरक्षित अभ्यास करें", whatsappTitle: "WhatsApp भुगतान", whatsappDesc: "WhatsApp चैट से अपने संपर्कों को सुरक्षित रूप से भुगतान भेजना सीखें।", gpayTitle: "Google Pay", gpayDesc: "Google Pay से पैसे भेजना, बैलेंस जांचना और लेनदेन इतिहास देखना सीखें।", startLearning: "सीखना शुरू करें", featureStep: "चरण-दर-चरण गाइड", featureStepDesc: "आसान निर्देश", featureVoice: "आवाज़ निर्देश", featureVoiceDesc: "हर चरण सुनें", featureSafe: "100% सुरक्षित", featureSafeDesc: "असली पैसे नहीं", safetyNote: "यह एक सुरक्षित सिमुलेशन है। कोई असली पैसा या डेटा उपयोग नहीं होता।" },
     common: { phone: "फ़ोन", email: "ईमेल", address: "पता", hours: "समय", viewAll: "सब देखें", close: "बंद करें", save: "सेव", cancel: "रद्द", submit: "जमा करें", loading: "लोड हो रहा है..." },
   },
   mr: {
     lang: "मराठी",
-    nav: { home: "मुख्यपृष्ठ", services: "सेवा", resources: "संसाधने", findHelp: "मदत शोधा", emergency: "आणीबाणी", about: "आमच्याबद्दल", contact: "संपर्क", schemes: "योजना", medicine: "औषध" },
+    nav: { home: "मुख्यपृष्ठ", services: "सेवा", resources: "संसाधने", findHelp: "मदत शोधा", emergency: "आणीबाणी", about: "आमच्याबद्दल", contact: "संपर्क", schemes: "योजना", medicine: "औषध", digitalLearning: "शिका" },
     hero: { badge: "ज्येष्ठांसाठी चांगले जीवन", title: "ज्येष्ठ सेवा आणि मदत", subtitle: "आरोग्य, जेवण, वाहतूक आणि बरेच काही", search: "सेवा शोधा...", location: "तुमचे ठिकाण", cta: "सेवा पहा", sos: "आणीबाणी मदत" },
     quickAccess: { title: "जलद प्रवेश", subtitle: "कार्डवर टॅप करा" },
     categories: { healthcare: "आरोग्य", meals: "जेवण", transport: "वाहतूक", legal: "कायदेशीर मदत", financial: "आर्थिक", companion: "सोबती सेवा", schemes: "सरकारी योजना", medicine: "औषध" },
@@ -69,6 +71,7 @@ const translations = {
     medicine: { title: "औषध स्मरणपत्र", subtitle: "कोणताही डोस चुकवू नका", addMed: "औषध जोडा", name_: "औषधाचे नाव", dosage: "डोस", time: "वेळ", frequency: "किती वेळा", daily: "दररोज", twiceDaily: "दिवसातून दोनदा", weekly: "साप्ताहिक", add: "जोडा", taken: "घेतले", skip: "सोडा", streak: "स्ट्रीक", points: "गुण" },
     gamification: { level: "पातळी", points: "गुण", streak: "दिवस स्ट्रीक", badges: "बॅज", tasks: "गुण मिळवण्यासाठी कार्ये पूर्ण करा" },
     reading: { normal: "सामान्य", comfortable: "आरामदायक", focus: "फोकस" },
+    digitalLearning: { badge: "डिजिटल शिक्षण", title: "डिजिटल पेमेंट शिका", subtitle: "WhatsApp आणि Google Pay चा सुरक्षित सराव करा", whatsappTitle: "WhatsApp पेमेंट", whatsappDesc: "WhatsApp चॅटद्वारे तुमच्या संपर्कांना सुरक्षितपणे पेमेंट पाठवायला शिका.", gpayTitle: "Google Pay", gpayDesc: "Google Pay ने पैसे पाठवणे, बॅलन्स तपासणे आणि व्यवहार इतिहास पाहणे शिका.", startLearning: "शिकायला सुरुवात करा", featureStep: "चरण-दर-चरण मार्गदर्शक", featureStepDesc: "सोप्या सूचना", featureVoice: "आवाज सूचना", featureVoiceDesc: "प्रत्येक पाऊल ऐका", featureSafe: "100% सुरक्षित", featureSafeDesc: "खरे पैसे नाहीत", safetyNote: "हे एक सुरक्षित सिम्युलेशन आहे. कोणतेही खरे पैसे किंवा डेटा वापरला जात नाही." },
     common: { phone: "फोन", email: "ईमेल", address: "पत्ता", hours: "वेळ", viewAll: "सर्व पहा", close: "बंद करा", save: "सेव", cancel: "रद्द", submit: "सबमिट करा", loading: "लोड होत आहे..." },
   },
 };
