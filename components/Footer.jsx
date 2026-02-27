@@ -12,6 +12,7 @@ export default function Footer() {
       { href: "/services", label: t.services.title },
       { href: "/schemes", label: t.nav.schemes },
       { href: "/medicine-reminder", label: t.nav.medicine },
+      { href: "/nearby-hospitals", label: t.nav.hospitals || "Hospitals" },
     ]},
     { title: t.resources.title, items: [
       { href: "/resources", label: t.resources.title },

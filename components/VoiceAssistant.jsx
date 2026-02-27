@@ -16,6 +16,7 @@ const COMMANDS = [
   { keywords: ["companion", "companionship", "friend", "lonely", "care"], path: "/services/companion-care", label: "Companion Care" },
   { keywords: ["schemes", "government", "scheme", "yojana", "phule", "government scheme", "govt"], path: "/schemes", label: "Govt Schemes" },
   { keywords: ["medicine", "reminder", "medicine reminder", "pill", "medication", "dose"], path: "/medicine-reminder", label: "Medicine Reminder" },
+  { keywords: ["hospital", "hospitals", "nearby hospital", "nearby hospitals", "clinic", "medical facility"], path: "/nearby-hospitals", label: "Nearby Hospitals" },
   { keywords: ["resources", "resource", "guides", "articles", "tips"], path: "/resources", label: "Resources" },
   { keywords: ["find help", "near me", "nearby", "location", "local", "help near"], path: "/find-help", label: "Find Help" },
   { keywords: ["emergency", "sos", "urgent", "ambulance", "police", "911", "help"], path: "/emergency", label: "Emergency" },

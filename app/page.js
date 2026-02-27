@@ -10,7 +10,7 @@ import {
   Shield, Users, Star, ArrowRight, Phone, FileText, Pill,
   Trophy, Flame, Zap, Search, MapPin, ChevronRight,
   CheckCircle2, Globe, Stethoscope, HandHeart, TrendingUp,
-  Leaf, ChevronDown,
+  Leaf, ChevronDown, Hospital,
 } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -24,6 +24,7 @@ const services = [
   { icon: HeartHandshake, label: "companion", href: "/services/companion-care" },
   { icon: FileText, label: "schemes", href: "/schemes" },
   { icon: Pill, label: "medicine", href: "/medicine-reminder" },
+  { icon: Hospital, label: "hospitals", href: "/nearby-hospitals" },
 ];
 
 const testimonials = [
@@ -140,7 +141,7 @@ export default function HomePage() {
               View all <ArrowRight size={14} strokeWidth={2} />
             </Link>
           </motion.div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3">
             {services.map((s, i) => (
               <motion.div key={s.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04, duration: 0.4 }}>
                 <Link href={s.href} className="group flex items-center gap-3.5 p-4 rounded-xl border border-transparent hover:border-card-border hover:bg-card-bg dark:hover:bg-card-bg transition-all duration-200">
